@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 字体变量 */
+:root {
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* 暗色主题（默认） */
+:root,
+.dark {
+  --void-bg: #0a0a0f;
+  --void-bg-card: #12121a;
+  --neon-green: #00ff88;
+  --neon-blue: #00d4ff;
+  --void-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+}
+
+/* 亮色主题 */
+.light {
+  --void-bg: #f8f9fa;
+  --void-bg-card: #ffffff;
+  --neon-green: #00b368;
+  --neon-blue: #0099cc;
+  --void-border: rgba(0, 0, 0, 0.1);
+  --text-primary: #1a1a2e;
+  --text-secondary: rgba(26, 26, 46, 0.8);
+  --text-muted: rgba(26, 26, 46, 0.6);
+}
+
+/* 基础样式 */
+body {
+  background-color: var(--void-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 玻璃效果 */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--void-border);
+  transition: all 0.3s ease;
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 霓虹绿 */
+.text-neon-green {
+  color: var(--neon-green);
+}
+
+.bg-neon-green\/20 {
+  background-color: rgba(0, 255, 136, 0.2);
+}
+
+.light .bg-neon-green\/20 {
+  background-color: rgba(0, 179, 104, 0.15);
+}
+
+.border-neon-green\/30 {
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.light .border-neon-green\/30 {
+  border-color: rgba(0, 179, 104, 0.4);
+}
+
+.border-neon-green\/50 {
+  border-color: rgba(0, 255, 136, 0.5);
+}
+
+.light .border-neon-green\/50 {
+  border-color: rgba(0, 179, 104, 0.6);
+}
+
+.hover\:border-neon-green\/50:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+}
+
+.light .hover\:border-neon-green\/50:hover {
+  border-color: rgba(0, 179, 104, 0.6);
+}
+
+/* 霓虹蓝 */
+.text-neon-blue {
+  color: var(--neon-blue);
+}
+
+.bg-neon-blue\/5 {
+  background-color: rgba(0, 212, 255, 0.05);
+}
+
+.light .bg-neon-blue\/5 {
+  background-color: rgba(0, 153, 204, 0.08);
+}
+
+/* 背景色 */
+.bg-void-bg {
+  background-color: var(--void-bg);
+}
+
+.bg-void-bg-card {
+  background-color: var(--void-bg-card);
+}
+
+.bg-void-bg-card\/50 {
+  background-color: rgba(18, 18, 26, 0.5);
+}
+
+.light .bg-void-bg-card\/50 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 边框 */
+.border-void-border {
+  border-color: var(--void-border);
+}
+
+/* 文字颜色 - 适配亮色模式 */
+.text-white\/70,
+.text-white\/60,
+.text-white\/50,
+.text-white\/40,
+.text-white\/30 {
+  color: var(--text-secondary);
+}
+
+.light .text-white\/60 {
+  color: rgba(26, 26, 46, 0.7);
+}
+
+.light .text-white\/50 {
+  color: var(--text-muted);
+}
+
+.light .text-white\/40 {
+  color: rgba(26, 26, 46, 0.5);
+}
+
+.light .text-white\/30 {
+  color: rgba(26, 26, 46, 0.4);
+}
+
+/* 边框颜色 */
+.border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.hover\:border-white\/30:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.light .hover\:border-white\/30:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder 颜色 */
+.placeholder-white\/30::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.light .placeholder-white\/30::placeholder {
+  color: rgba(26, 26, 46, 0.4);
+}
+
+.placeholder-\[var\(--text-muted\)\]::placeholder {
+  color: var(--text-muted);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* 选中文字 */
+::selection {
+  background: var(--neon-green);
+  color: var(--void-bg);
+}
+
+/* 链接下划线动画 */
+.hover\:underline {
+  text-underline-offset: 4px;
+}
+
+/* 字体 */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* 修复亮色模式下标题颜色 */
+.light h1, .light h2, .light h3, .light h4 {
+  color: var(--text-primary);
+}
+
+/* 修复亮色模式下段落颜色 */
+.light p {
+  color: var(--text-secondary);
+}
