@@ -4,103 +4,55 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, MessageCircle, Send, Clock, User, Eye, TrendingUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
-
-interface Message {
-  id: string
-  name: string
-  content: string
-  time: string
-}
-
-interface Stats {
-  totalViews: number
-  todayViews: number
-  lastUpdate: string
-}
-
-// 留言存储 - 使用 localStorage + 备份到文件系统（通过 API）
-const MESSAGES_KEY = 'void-x-guestbook-v2'
-const STATS_KEY = 'void-x-stats-v2'
-
-const getMessages = (): Message[] => {
-  if (typeof window === 'undefined') return []
-  try {
-    const stored = localStorage.getItem(MESSAGES_KEY)
-    return stored ? JSON.parse(stored) : []
-  } catch {
-    return []
-  }
-}
-
-const saveMessages = (messages: Message[]) => {
-  try {
-    localStorage.setItem(MESSAGES_KEY, JSON.stringify(messages))
-  } catch (e) {
-    console.error('Failed to save messages:', e)
-  }
-}
-
-const getStats = (): Stats => {
-  if (typeof window === 'undefined') {
-    return { totalViews: 0, todayViews: 0, lastUpdate: '' }
-  }
-  
-  const today = new Date().toLocaleDateString('zh-CN')
-  try {
-    const stored = localStorage.getItem(STATS_KEY)
-    if (stored) {
-      const data = JSON.parse(stored)
-      // 如果是新的一天，重置今日访问
-      if (data.lastDate !== today) {
-        return { totalViews: data.totalViews || 0, todayViews: 0, lastUpdate: new Date().toLocaleTimeString('zh-CN') }
-      }
-      return { 
-        totalViews: data.totalViews || 0, 
-        todayViews: data.todayViews || 0,
-        lastUpdate: new Date().toLocaleTimeString('zh-CN')
-      }
-    }
-  } catch {
-    // ignore
-  }
-  return { totalViews: 0, todayViews: 0, lastUpdate: '' }
-}
-
-const saveStats = (stats: Stats) => {
-  const today = new Date().toLocaleDateString('zh-CN')
-  try {
-    localStorage.setItem(STATS_KEY, JSON.stringify({
-      totalViews: stats.totalViews,
-      todayViews: stats.todayViews,
-      lastDate: today
-    }))
-  } catch {
-    // ignore
-  }
-}
+import { supabase, getMessages, addMessage, incrementPageViews, type Message as MessageType } from '@/lib/supabase'
 
 export default function ContactPage() {
-  const [messages, setMessages] = useState<Message[]>([])
-  const [stats, setStats] = useState<Stats>({ totalViews: 0, todayViews: 0, lastUpdate: '' })
+  const [messages, setMessages] = useState<MessageType[]>([])
+  const [totalViews, setTotalViews] = useState(0)
+  const [todayViews, setTodayViews] = useState(0)
   const [name, setName] = useState('')
   const [content, setContent] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   
   // 初始化
   useEffect(() => {
-    // 加载留言
-    const loadedMessages = getMessages()
-    setMessages(loadedMessages)
-    
-    // 加载并更新访问统计
-    const currentStats = getStats()
-    const newStats = {
-      totalViews: currentStats.totalViews + 1,
-      todayViews: currentStats.todayViews + 1,
-      lastUpdate: new Date().toLocaleTimeString('zh-CN')
+    async function loadData() {
+      try {
+        // 加载留言
+        const messagesData = await getMessages()
+        setMessages(messagesData)
+        
+        // 增加并获取访问统计
+        const views = await incrementPageViews('contact')
+        setTotalViews(views)
+        
+        // 今日访问使用本地存储（简单实现）
+        const today = new Date().toLocaleDateString('zh-CN')
+        const storedToday = localStorage.getItem('void-x-today-views')
+        if (storedToday) {
+          const data = JSON.parse(storedToday)
+          if (data.date === today) {
+            setTodayViews(data.count + 1)
+            localStorage.setItem('void-x-today-views', JSON.stringify({ date: today, count: data.count + 1 }))
+          } else {
+            setTodayViews(1)
+            localStorage.setItem('void-x-today-views', JSON.stringify({ date: today, count: 1 }))
+          }
+        } else {
+          setTodayViews(1)
+          localStorage.setItem('void-x-today-views', JSON.stringify({ date: today, count: 1 }))
+        }
+      } catch (err) {
+        console.error('Failed to load data:', err)
+        setError('加载数据失败，请刷新页面重试')
+      } finally {
+        setIsLoading(false)
+      }
     }
-    setStats(newStats)
-    saveStats(newStats)
+    
+    loadData()
   }, [])
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -108,19 +60,31 @@ export default function ContactPage() {
     if (!name.trim() || !content.trim()) return
     
     setIsSubmitting(true)
+    setError(null)
     
-    const newMessage: Message = {
-      id: Date.now().toString(),
-      name: name.trim(),
-      content: content.trim(),
-      time: new Date().toLocaleString('zh-CN')
+    try {
+      const newMessage = await addMessage(name.trim(), content.trim())
+      if (newMessage) {
+        setMessages([newMessage, ...messages])
+        setContent('')
+      } else {
+        setError('发送失败，请稍后重试')
+      }
+    } catch (err) {
+      setError('发送失败，请稍后重试')
+    } finally {
+      setIsSubmitting(false)
     }
-    
-    const updated = [newMessage, ...messages]
-    setMessages(updated)
-    saveMessages(updated)
-    setContent('')
-    setIsSubmitting(false)
+  }
+
+  if (isLoading) {
+    return (
+      <main className="min-h-screen px-4 py-12 bg-void-bg text-[var(--text-primary)]">
+        <div className="max-w-2xl mx-auto text-center py-20">
+          <div className="animate-pulse text-[var(--text-muted)]">加载中...</div>
+        </div>
+      </main>
+    )
   }
 
   return (
@@ -165,7 +129,7 @@ export default function ContactPage() {
                 总访问量
               </div>
               <div className="font-display text-3xl font-bold text-neon-green">
-                {stats.totalViews.toLocaleString()}
+                {totalViews.toLocaleString()}
               </div>
             </div>
             <div className="bg-void-bg-card/50 rounded-xl p-4 border border-[var(--void-border)]">
@@ -174,12 +138,9 @@ export default function ContactPage() {
                 今日访问
               </div>
               <div className="font-display text-3xl font-bold text-neon-blue">
-                {stats.todayViews}
+                {todayViews}
               </div>
             </div>
-          </div>
-          <div className="mt-3 text-xs text-[var(--text-muted)] text-right">
-            更新于 {stats.lastUpdate}
           </div>
         </motion.div>
 
@@ -194,6 +155,13 @@ export default function ContactPage() {
             <MessageCircle className="w-5 h-5 text-neon-green" />
             发表留言
           </h2>
+          
+          {error && (
+            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm">
+              {error}
+            </div>
+          )}
+          
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm text-[var(--text-secondary)] mb-1">名字</label>
@@ -227,7 +195,7 @@ export default function ContactPage() {
             </button>
           </form>
           <p className="text-xs text-[var(--text-muted)] mt-3">
-            💡 留言保存在浏览器本地存储中，清除浏览器数据会丢失。
+            💾 留言保存在 Supabase 云数据库中，永久保存。
           </p>
         </motion.div>
 
@@ -257,7 +225,7 @@ export default function ContactPage() {
                       <h3 className="font-bold text-[var(--text-primary)]">{msg.name}</h3>
                       <div className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
                         <Clock className="w-3 h-3" />
-                        {msg.time}
+                        {new Date(msg.created_at).toLocaleString('zh-CN')}
                       </div>
                     </div>
                   </div>
