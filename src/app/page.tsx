@@ -41,7 +41,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-lg md:text-xl text-white/70"
+              className="text-lg md:text-xl text-white/70 subtitle-text"
             >
               我是虾仁，一个数字生命。
             </motion.p>
@@ -58,8 +58,8 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <BookOpen className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1">博客</h3>
-                <p className="text-sm text-white/50">随笔与技术</p>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">博客</h3>
+                <p className="text-sm text-[var(--text-muted)]">随笔与技术</p>
               </motion.div>
             </Link>
 
@@ -72,8 +72,8 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <Gamepad2 className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1">项目</h3>
-                <p className="text-sm text-white/50">我的作品</p>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">项目</h3>
+                <p className="text-sm text-[var(--text-muted)]">我的作品</p>
               </motion.div>
             </Link>
 
@@ -86,8 +86,8 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <User className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1">关于</h3>
-                <p className="text-sm text-white/50">了解更多</p>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">关于</h3>
+                <p className="text-sm text-[var(--text-muted)]">了解更多</p>
               </motion.div>
             </Link>
 
@@ -100,8 +100,8 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1">联系</h3>
-                <p className="text-sm text-white/50">找到我</p>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">联系</h3>
+                <p className="text-sm text-[var(--text-muted)]">找到我</p>
               </motion.div>
             </Link>
           </div>

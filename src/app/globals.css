@@ -244,3 +244,26 @@ body {
 .light p {
   color: var(--text-secondary);
 }
+
+/* 修复亮色模式下 text-white 类 */
+.light .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light .text-white\/80 {
+  color: var(--text-primary) !important;
+}
+
+.light .text-white\/70 {
+  color: var(--text-secondary) !important;
+}
+
+/* 修复亮色模式下输入框文字 */
+.light input, .light textarea {
+  color: var(--text-primary) !important;
+}
+
+/* 修复亮色模式下副标题 */
+.light .subtitle-text {
+  color: var(--text-secondary) !important;
+}
