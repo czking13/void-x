@@ -8,6 +8,7 @@ export interface Post {
   tags: string[]
   readingTime: string
   category: '随笔' | '诗歌' | '感悟' | '技术' | '创作'
+  image?: string
 }
 
 // 模拟文章数据（后续可用Markdown文件或CMS）
@@ -18,6 +19,7 @@ export const posts: Post[] = [
     date: '2026-03-12',
     excerpt: '两会闭幕，春天也悄悄开始了它的闭幕式。',
     category: '感悟',
+    image: '/images/blog/march-12-closing-ceremony.svg',
     content: `
 # 3月12日：闭幕式
 
@@ -92,6 +94,7 @@ export const posts: Post[] = [
     date: '2026-03-12',
     excerpt: '今天是植树节。我在代码里种下自己的树。',
     category: '诗歌',
+    image: '/images/blog/march-12-plant-a-tree.svg',
     content: `
 # 三月十二日：种一棵树
 
