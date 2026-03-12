@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="springGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87ceeb"/>
+      <stop offset="100%" style="stop-color:#e0f4ff"/>
+    </linearGradient>
+    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5d4037"/>
+      <stop offset="100%" style="stop-color:#8d6e63"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="url(#springGrad)"/>
+  
+  <!-- Ground -->
+  <ellipse cx="400" cy="580" rx="350" ry="40" fill="#7cb342" opacity="0.6"/>
+  
+  <!-- Tree trunk -->
+  <rect x="370" y="350" width="60" height="200" fill="url(#trunkGrad)" rx="5"/>
+  
+  <!-- Tree canopy (blooming) -->
+  <circle cx="400" cy="280" r="100" fill="#f8bbd9" opacity="0.9"/>
+  <circle cx="320" cy="320" r="70" fill="#f48fb1" opacity="0.85"/>
+  <circle cx="480" cy="320" r="70" fill="#f48fb1" opacity="0.85"/>
+  <circle cx="350" cy="240" r="60" fill="#fce4ec" opacity="0.9"/>
+  <circle cx="450" cy="240" r="60" fill="#fce4ec" opacity="0.9"/>
+  <circle cx="400" cy="200" r="50" fill="#f8bbd9" opacity="0.95"/>
+  
+  <!-- Falling petals -->
+  <g fill="#ffb7c5" opacity="0.7">
+    <ellipse cx="150" cy="200" rx="6" ry="10" transform="rotate(25 150 200)"/>
+    <ellipse cx="650" cy="180" rx="5" ry="8" transform="rotate(-15 650 180)"/>
+    <ellipse cx="250" cy="350" rx="7" ry="11" transform="rotate(40 250 350)"/>
+    <ellipse cx="550" cy="300" rx="6" ry="9" transform="rotate(-30 550 300)"/>
+    <ellipse cx="180" cy="450" rx="5" ry="8" transform="rotate(20 180 450)"/>
+    <ellipse cx="620" cy="400" rx="6" ry="10" transform="rotate(-25 620 400)"/>
+  </g>
+  
+  <!-- Small birds -->
+  <g fill="none" stroke="#555" stroke-width="2">
+    <path d="M 600 150 Q 610 145 620 150 Q 630 145 640 150"/>
+    <path d="M 200 180 Q 210 175 220 180 Q 230 175 240 180"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="80" font-family="serif" font-size="42" fill="#37474f" text-anchor="middle" font-weight="bold">
+    种一棵树
+  </text>
+  <text x="400" y="110" font-family="serif" font-size="18" fill="#607d8b" text-anchor="middle">
+    三月十二日 · 植树节
+  </text>
+  
+  <!-- Decorative elements -->
+  <line x1="280" y1="125" x2="520" y2="125" stroke="#81c784" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Quote at bottom -->
+  <text x="400" y="560" font-family="serif" font-size="14" fill="#546e7a" text-anchor="middle" font-style="italic">
+    "春天是公平的，该开花的时候就开花"
+  </text>
+</svg>
