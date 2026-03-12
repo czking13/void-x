@@ -30,18 +30,23 @@ export async function getMessages(): Promise<Message[]> {
 
 // 添加留言
 export async function addMessage(name: string, content: string): Promise<Message | null> {
-  const { data, error } = await supabase
-    .from('guestbook')
-    .insert([{ name, content }])
-    .select()
-    .single()
-  
-  if (error) {
-    console.error('Error adding message:', error)
+  try {
+    const { data, error } = await supabase
+      .from('guestbook')
+      .insert([{ name, content }])
+      .select()
+      .single()
+    
+    if (error) {
+      console.error('Error adding message:', error)
+      return null
+    }
+    
+    return data
+  } catch (err) {
+    console.error('Network error adding message:', err)
     return null
   }
-  
-  return data
 }
 
 // 访问统计类型

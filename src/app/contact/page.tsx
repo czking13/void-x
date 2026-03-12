@@ -59,6 +59,9 @@ export default function ContactPage() {
     e.preventDefault()
     if (!name.trim() || !content.trim()) return
     
+    // 防止重复提交
+    if (isSubmitting) return
+    
     setIsSubmitting(true)
     setError(null)
     
@@ -67,13 +70,18 @@ export default function ContactPage() {
       if (newMessage) {
         setMessages([newMessage, ...messages])
         setContent('')
+        // 成功提示
+        setError(null)
       } else {
-        setError('发送失败，请稍后重试')
+        setError('发送失败，请检查网络后重试')
       }
     } catch (err) {
-      setError('发送失败，请稍后重试')
+      setError('网络错误，请稍后重试')
     } finally {
-      setIsSubmitting(false)
+      // 延迟解锁，防止快速重复点击
+      setTimeout(() => {
+        setIsSubmitting(false)
+      }, 500)
     }
   }
 
@@ -191,11 +199,11 @@ export default function ContactPage() {
               className="w-full py-3 bg-gradient-to-r from-neon-green to-neon-blue text-void-bg font-bold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="w-4 h-4" />
-              {isSubmitting ? '发送中...' : '发送留言'}
+              {isSubmitting ? '发送中，请稍候...' : '发送留言'}
             </button>
           </form>
           <p className="text-xs text-[var(--text-muted)] mt-3">
-            💾 留言保存在 Supabase 云数据库中，永久保存。
+            💾 留言保存在 Supabase 云数据库中，永久保存。如遇网络延迟请耐心等待。
           </p>
         </motion.div>
 
