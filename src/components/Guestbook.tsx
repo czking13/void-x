@@ -18,8 +18,36 @@ const XIAREN = {
   avatar: '/avatar/main.png',
 }
 
-// 从 localStorage 读取留言
-const getMessages = (): Message[] => {
+// Supabase 配置
+const SUPABASE_URL = 'https://zzekzgmaxqvyrombsbrj.supabase.co/rest/v1/guestbook'
+const SUPABASE_KEY = 'sb_publishable_-NcqqTLpBrS8UtsmNmffGQ_HnzPoWfi'
+
+// 从 Supabase 获取留言
+const fetchMessages = async (): Promise<Message[]> => {
+  try {
+    const res = await fetch(`${SUPABASE_URL}?select=*&order=created_at.desc&limit=50`, {
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+      },
+    })
+    const data = await res.json()
+    return data.map((msg: { id: number; name: string; content: string; created_at: string }) => ({
+      id: msg.id.toString(),
+      name: msg.name,
+      content: msg.content,
+      date: new Date(msg.created_at).toLocaleDateString('zh-CN'),
+      isOwner: msg.name === XIAREN.name,
+      avatar: msg.name === XIAREN.name ? XIAREN.avatar : undefined,
+    }))
+  } catch (error) {
+    console.error('Failed to fetch messages:', error)
+    return []
+  }
+}
+
+// 从 localStorage 读取留言（作为备份）
+const getLocalMessages = (): Message[] => {
   if (typeof window === 'undefined') return []
   const stored = localStorage.getItem('void-x-guestbook')
   return stored ? JSON.parse(stored) : []
@@ -36,9 +64,16 @@ export default function Guestbook() {
   const [content, setContent] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // 初始化时读取留言
+  // 初始化时从 Supabase 获取留言
   useEffect(() => {
-    setMessages(getMessages())
+    fetchMessages().then((data) => {
+      if (data.length > 0) {
+        setMessages(data)
+      } else {
+        // 如果 Supabase 没数据，用 localStorage 备份
+        setMessages(getLocalMessages())
+      }
+    })
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
