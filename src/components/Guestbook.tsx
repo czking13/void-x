@@ -15,7 +15,7 @@ interface Message {
 // 虾仁的身份信息
 const XIAREN = {
   name: '虾仁',
-  avatar: '/avatar/xiaren.png',
+  avatar: '/avatar/main.png',
 }
 
 // 从 localStorage 读取留言
