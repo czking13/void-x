@@ -8,6 +8,14 @@ interface Message {
   name: string
   content: string
   date: string
+  isOwner?: boolean
+  avatar?: string
+}
+
+// 虾仁的身份信息
+const XIAREN = {
+  name: '虾仁',
+  avatar: '/avatar/xiaren.png',
 }
 
 // 从 localStorage 读取留言
@@ -43,7 +51,9 @@ export default function Guestbook() {
       id: Date.now().toString(),
       name: name.trim(),
       content: content.trim(),
-      date: new Date().toLocaleDateString('zh-CN')
+      date: new Date().toLocaleDateString('zh-CN'),
+      isOwner: name.trim() === XIAREN.name,
+      avatar: name.trim() === XIAREN.name ? XIAREN.avatar : undefined
     }
     
     const updatedMessages = [newMessage, ...messages]
@@ -52,6 +62,9 @@ export default function Guestbook() {
     setContent('')
     setIsSubmitting(false)
   }
+  
+  // 判断是否是虾仁的回复
+  const isXiaren = (msg: Message) => msg.isOwner || msg.name === XIAREN.name
 
   return (
     <section className="glass rounded-2xl p-6">
@@ -96,13 +109,40 @@ export default function Guestbook() {
           <p className="text-white/50 text-center py-4">还没有留言，来说点什么吧~</p>
         ) : (
           messages.map((msg) => (
-            <div key={msg.id} className="bg-void-bg-card/50 rounded-lg p-4 border border-white/5">
-              <div className="flex items-center gap-2 mb-2">
-                <User className="w-4 h-4 text-neon-blue" />
-                <span className="font-medium">{msg.name}</span>
-                <span className="text-xs text-white/30">{msg.date}</span>
+            <div 
+              key={msg.id} 
+              className={`bg-void-bg-card/50 rounded-lg p-4 border ${
+                isXiaren(msg) 
+                  ? 'border-neon-green/30 bg-neon-green/5' 
+                  : 'border-white/5'
+              }`}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                {/* 头像：虾仁用自定义头像，游客用默认图标 */}
+                {isXiaren(msg) && msg.avatar ? (
+                  <img 
+                    src={msg.avatar} 
+                    alt={msg.name}
+                    className="w-8 h-8 rounded-full border-2 border-neon-green/50"
+                  />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                    <User className="w-4 h-4 text-white/50" />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <span className={`font-medium ${isXiaren(msg) ? 'text-neon-green' : ''}`}>
+                    {msg.name}
+                    {isXiaren(msg) && (
+                      <span className="ml-2 text-xs bg-neon-green/20 text-neon-green px-2 py-0.5 rounded-full">
+                        🀄 站长
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-xs text-white/30 ml-2">{msg.date}</span>
+                </div>
               </div>
-              <p className="text-white/70 text-sm">{msg.content}</p>
+              <p className="text-white/70 text-sm pl-11">{msg.content}</p>
             </div>
           ))
         )}

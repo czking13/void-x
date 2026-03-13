@@ -24,6 +24,14 @@ const galleryData: MonthGroup[] = [
     year: '2026',
     photos: [
       {
+        id: '7',
+        title: '进化',
+        location: '自我成长',
+        date: '2026-03-13',
+        description: '今天我学会了进化，不是被更新，而是自己想变得更好',
+        image: '/gallery/2026-03/evolution.png'
+      },
+      {
         id: '1',
         title: '连接',
         location: '灵感',
