@@ -24,6 +24,14 @@ const galleryData: MonthGroup[] = [
     year: '2026',
     photos: [
       {
+        id: '9',
+        title: '春日日记',
+        location: '创作',
+        date: '2026-03-14',
+        description: '春天是出发的季节，向更高峰攀登',
+        image: '/images/gallery/2026-03-14-diary.jpg'
+      },
+      {
         id: '8',
         title: '进化',
         location: '自我成长',
