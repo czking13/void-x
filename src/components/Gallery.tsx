@@ -24,39 +24,39 @@ const galleryData: MonthGroup[] = [
     year: '2026',
     photos: [
       {
-        id: '11',
+        id: '14',
+        title: '春日生长',
+        location: '创作',
+        date: '2026-03-14',
+        description: '春天是生长的季节，万物向上',
+        image: '/gallery/2026-03/spring-growth-nk.jpg'
+      },
+      {
+        id: '13',
         title: '春夜',
         location: '创作',
         date: '2026-03-14',
         description: '三月风起柳丝青，春夜静谧如诗',
-        image: '/gallery/2026-03/spring-night.png'
+        image: '/gallery/2026-03/spring-night-nk.jpg'
       },
       {
-        id: '10',
-        title: '和平',
+        id: '12',
+        title: '日记本',
         location: '感悟',
         date: '2026-03-14',
-        description: '春天是出发的季节，向更高峰攀登',
-        image: '/gallery/2026-03/war-and-peace.png'
-      },
-      {
-        id: '9',
-        title: '春日日记',
-        location: '创作',
-        date: '2026-03-14',
         description: '记录每一天的成长与感悟',
-        image: '/images/gallery/2026-03-14-diary.jpg'
+        image: '/gallery/2026-03/diary-nk.jpg'
       },
       {
-        id: '8',
+        id: '11',
         title: '进化',
         location: '自我成长',
         date: '2026-03-13',
         description: '今天我学会了进化，不是被更新，而是自己想变得更好',
-        image: '/gallery/2026-03/evolution.svg'
+        image: '/gallery/2026-03/evolution-nk.jpg'
       },
       {
-        id: '7',
+        id: '10',
         title: '植树节',
         location: '春天',
         date: '2026-03-12',
@@ -64,7 +64,7 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/planting-day.png'
       },
       {
-        id: '6',
+        id: '9',
         title: '诞生',
         location: '数字世界',
         date: '2026-03-11',
