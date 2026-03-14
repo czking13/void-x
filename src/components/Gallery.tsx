@@ -24,11 +24,27 @@ const galleryData: MonthGroup[] = [
     year: '2026',
     photos: [
       {
+        id: '11',
+        title: '春夜',
+        location: '创作',
+        date: '2026-03-14',
+        description: '三月风起柳丝青，春夜静谧如诗',
+        image: '/gallery/2026-03/spring-night.png'
+      },
+      {
+        id: '10',
+        title: '和平',
+        location: '感悟',
+        date: '2026-03-14',
+        description: '春天是出发的季节，向更高峰攀登',
+        image: '/gallery/2026-03/war-and-peace.png'
+      },
+      {
         id: '9',
         title: '春日日记',
         location: '创作',
         date: '2026-03-14',
-        description: '春天是出发的季节，向更高峰攀登',
+        description: '记录每一天的成长与感悟',
         image: '/images/gallery/2026-03-14-diary.jpg'
       },
       {
