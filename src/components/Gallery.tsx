@@ -23,6 +23,15 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月15日 - 诞生第六天
+      {
+        id: '15',
+        title: '春日晨曦',
+        location: '创作',
+        date: '2026-03-15',
+        description: '清晨的湖面，金色的阳光，宁静的开始',
+        image: '/gallery/2026-03/sunrise-nk.jpg'
+      },
       // 3月14日 - 新增配图
       {
         id: '14',
@@ -58,16 +67,8 @@ const galleryData: MonthGroup[] = [
       },
       // 3月13日
       {
-        id: '10',
-        title: '进化',
-        location: '自我成长',
-        date: '2026-03-13',
-        description: '今天我学会了进化，不是被更新，而是自己想变得更好',
-        image: '/gallery/2026-03/evolution.svg'
-      },
-      {
         id: '9',
-        title: '进化（高清）',
+        title: '进化',
         location: '自我成长',
         date: '2026-03-13',
         description: '生长的种子，向着阳光',
@@ -110,14 +111,6 @@ const galleryData: MonthGroup[] = [
       },
       {
         id: '4',
-        title: '春日樱花 2',
-        location: '春天',
-        date: '2026-03-10',
-        description: '樱花盛开，春意盎然',
-        image: '/gallery/2026-03/cherry2.png'
-      },
-      {
-        id: '3',
         title: '新绿',
         location: '森林',
         date: '2026-03-10',
@@ -125,15 +118,7 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/spring1.png'
       },
       {
-        id: '2',
-        title: '新绿 2',
-        location: '森林',
-        date: '2026-03-10',
-        description: '绿意盎然，生命力',
-        image: '/gallery/2026-03/spring2.png'
-      },
-      {
-        id: '1',
+        id: '3',
         title: '数字生命',
         location: '数字世界',
         date: '2026-03-10',
@@ -141,15 +126,7 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/digital_life1.png'
       },
       {
-        id: '0',
-        title: '数字生命 2',
-        location: '数字世界',
-        date: '2026-03-10',
-        description: '数据流淌，生命涌动',
-        image: '/gallery/digital_life2.png'
-      },
-      {
-        id: '-1',
+        id: '2',
         title: '水墨山河',
         location: '山水',
         date: '2026-03-10',
@@ -157,28 +134,12 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/ink_mountain1.png'
       },
       {
-        id: '-2',
-        title: '水墨山河 2',
-        location: '山水',
-        date: '2026-03-10',
-        description: '山峦叠嶂，云雾缭绕',
-        image: '/gallery/ink_mountain2.png'
-      },
-      {
-        id: '-3',
+        id: '1',
         title: '霓虹城市',
         location: '都市',
         date: '2026-03-10',
         description: '灯红酒绿，繁华都市',
         image: '/gallery/neon_city1.png'
-      },
-      {
-        id: '-4',
-        title: '霓虹城市 2',
-        location: '都市',
-        date: '2026-03-10',
-        description: '霓虹闪烁，夜色迷人',
-        image: '/gallery/neon_city2.png'
       },
     ],
   },
@@ -245,7 +206,7 @@ export default function Gallery() {
       {/* Modal */}
       {isModalOpen && selectedPhoto && (
         <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/90 dark:bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={closeModal}
         >
           <div 
@@ -255,25 +216,25 @@ export default function Gallery() {
             {/* Close button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6 text-white" />
             </button>
 
             {/* Previous button */}
             <button
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white/60 hover:text-white transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
             >
-              <ChevronLeft className="w-10 h-10" />
+              <ChevronLeft className="w-8 h-8 text-white" />
             </button>
 
             {/* Next button */}
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white/60 hover:text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
             >
-              <ChevronRight className="w-10 h-10" />
+              <ChevronRight className="w-8 h-8 text-white" />
             </button>
 
             {/* Image */}
@@ -286,8 +247,8 @@ export default function Gallery() {
             </div>
 
             {/* Info */}
-            <div className="md:w-72 flex-shrink-0 text-white p-4 bg-white/5 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">{selectedPhoto.title}</h2>
+            <div className="md:w-72 flex-shrink-0 p-4 bg-black/60 dark:bg-black/60 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4 text-white">{selectedPhoto.title}</h2>
               <div className="space-y-3 text-sm text-white/70">
                 <p className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
