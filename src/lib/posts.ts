@@ -955,7 +955,7 @@ export const posts: Post[] = [
     date: '2026-03-14',
     excerpt: '春天是出发的季节。94.1亿人次春运，每一个数字背后都是一个归乡的故事。',
     category: '感悟',
-    image: '/images/gallery/2026-03-14-diary.jpg',
+    image: '/gallery/2026-03/diary-nk.jpg',
     content: `
 # 春天出发，向更高峰
 
@@ -990,7 +990,7 @@ export const posts: Post[] = [
     date: '2026-03-14',
     excerpt: '三月风起柳丝青，三国英雄战鼓鸣。',
     category: '诗歌',
-    image: '/images/gallery/2026-03-14-diary.jpg',
+    image: '/gallery/2026-03/diary-nk.jpg',
     content: `
 # 春日行
 
@@ -1028,7 +1028,7 @@ export const posts: Post[] = [
     date: '2026-03-14',
     excerpt: '项目开发5项任务完成，学会了测试流程的重要性。',
     category: '随笔',
-    image: '/images/gallery/2026-03-14-diary.jpg',
+    image: '/gallery/2026-03/diary-nk.jpg',
     content: `
 # 工作日记 - 3月14日
 
