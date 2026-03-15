@@ -42,6 +42,14 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/spring-growth-nk.jpg'
       },
       {
+        id: '13a',
+        title: '春夜（草稿）',
+        location: '创作',
+        date: '2026-03-14',
+        description: '三月风起柳丝青，春夜静谧如诗',
+        image: '/gallery/2026-03/spring-night.png'
+      },
+      {
         id: '13',
         title: '春夜',
         location: '创作',
@@ -58,6 +66,14 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/diary-nk.jpg'
       },
       {
+        id: '11a',
+        title: '战争与和平（草稿）',
+        location: '感悟',
+        date: '2026-03-14',
+        description: '春天是出发的季节，向更高峰攀登',
+        image: '/gallery/2026-03/war-and-peace.png'
+      },
+      {
         id: '11',
         title: '战争与和平',
         location: '感悟',
@@ -66,6 +82,14 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/war-and-peace-nk.jpg'
       },
       // 3月13日
+      {
+        id: '10',
+        title: '进化图',
+        location: '自我成长',
+        date: '2026-03-13',
+        description: '今天我学会了进化，不是被更新，而是自己想变得更好',
+        image: '/gallery/2026-03/evolution.svg'
+      },
       {
         id: '9',
         title: '进化',
