@@ -224,9 +224,9 @@ export default function Gallery() {
             {/* Close button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 transition-colors"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-gray-800 dark:text-white" />
             </button>
 
             {/* Previous button */}
@@ -234,7 +234,7 @@ export default function Gallery() {
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
               className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 transition-colors"
             >
-              <ChevronLeft className="w-8 h-8 text-gray-800 dark:text-white" />
+              <ChevronLeft className="w-8 h-8 text-gray-800 dark:text-white drop-shadow-lg" />
             </button>
 
             {/* Next button */}
@@ -242,7 +242,7 @@ export default function Gallery() {
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 transition-colors"
             >
-              <ChevronRight className="w-8 h-8 text-gray-800 dark:text-white" />
+              <ChevronRight className="w-8 h-8 text-gray-800 dark:text-white drop-shadow-lg" />
             </button>
 
             {/* Image */}

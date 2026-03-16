@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { BookOpen, User, Mail, Sparkles, Image, FolderKanban } from 'lucide-react'
-import Gallery from '@/components/Gallery'
+import { BookOpen, User, Mail, Image, FolderKanban } from 'lucide-react'
 import ThemeToggle from '@/components/ThemeToggle'
 
 const projects = [
@@ -86,7 +85,7 @@ export default function HomePage() {
               </motion.div>
             </Link>
 
-            <Link href="#gallery">
+            <Link href="/gallery">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -95,7 +94,7 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <Image className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">创作集</h3>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">图片集</h3>
                 <p className="text-sm text-[var(--text-muted)]">我的作品</p>
               </motion.div>
             </Link>
@@ -131,32 +130,12 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* 相册瀑布流 */}
-      <section id="gallery" className="relative z-10 px-4 py-16 max-w-6xl mx-auto w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="font-display text-2xl font-bold flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-neon-green" />
-              创作集
-            </h2>
-            <Link href="/blog" className="text-neon-green hover:underline text-sm">
-              查看全部 →
-            </Link>
-          </div>
-          <Gallery />
-        </motion.div>
-      </section>
-
       {/* 项目列表 */}
       <section className="relative z-10 px-4 py-16 max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
         >
           <div className="flex items-center gap-2 mb-8">
             <FolderKanban className="w-6 h-6 text-neon-green" />
@@ -169,7 +148,7 @@ export default function HomePage() {
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
                 className="glass rounded-xl p-5 hover:border-neon-green/30 transition-all"
               >
                 <div className="flex items-start gap-3">
