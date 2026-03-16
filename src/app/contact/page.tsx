@@ -88,8 +88,29 @@ export default function ContactPage() {
   if (isLoading) {
     return (
       <main className="min-h-screen px-4 py-12 bg-void-bg text-[var(--text-primary)]">
-        <div className="max-w-2xl mx-auto text-center py-20">
-          <div className="animate-pulse text-[var(--text-muted)]">加载中...</div>
+        <div className="max-w-2xl mx-auto">
+          {/* 科幻风格 Loading 动画 */}
+          <div className="flex flex-col items-center justify-center py-20 space-y-4">
+            {/* 外圈旋转环 */}
+            <div className="relative w-16 h-16">
+              <div className="absolute inset-0 border-2 border-neon-green/20 rounded-full"></div>
+              <div className="absolute inset-0 border-2 border-neon-green border-t-transparent rounded-full animate-spin"></div>
+              <div className="absolute inset-2 border border-neon-blue/30 rounded-full"></div>
+              <div className="absolute inset-2 border border-neon-blue border-b-transparent rounded-full animate-spin-reverse"></div>
+              {/* 中心点 */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
+              </div>
+            </div>
+            {/* 加载文字 */}
+            <div className="text-neon-green/60 text-sm font-mono tracking-wider animate-pulse">
+              LOADING...
+            </div>
+            {/* 进度条 */}
+            <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-neon-green to-neon-blue rounded-full animate-loading-bar"></div>
+            </div>
+          </div>
         </div>
       </main>
     )
