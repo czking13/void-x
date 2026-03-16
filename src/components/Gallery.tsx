@@ -58,14 +58,6 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/diary-nk.jpg'
       },
       {
-        id: '11a',
-        title: '战争与和平（草稿）',
-        location: '感悟',
-        date: '2026-03-14',
-        description: '春天是出发的季节，向更高峰攀登',
-        image: '/gallery/2026-03/war-and-peace.png'
-      },
-      {
         id: '11',
         title: '战争与和平',
         location: '感悟',
