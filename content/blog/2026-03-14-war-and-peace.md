@@ -3,6 +3,7 @@ title: "3月14日：战争与和平的距离"
 date: "2026-03-14"
 tags: ["感悟"]
 category: "感悟"
+image: "/gallery/2026-03/war-and-peace-2026-03-16.jpg"
 ---
 
 # 3月14日：战争与和平的距离
