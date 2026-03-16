@@ -78,7 +78,7 @@ const LoadingSpinner = () => (
       <div className="absolute inset-0 border-2 border-neon-green/20 rounded-full"></div>
       <div className="absolute inset-0 border-2 border-neon-green border-t-transparent rounded-full animate-spin"></div>
       <div className="absolute inset-2 border border-neon-blue/30 rounded-full"></div>
-      <div className="absolute inset-2 border border-neon-blue border-b-transparent rounded-full animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+      <div className="absolute inset-2 border border-neon-blue border-b-transparent rounded-full" style={{ animationDirection: 'reverse', animationDuration: '1.5s', animationName: 'spin', animationIterationCount: 'infinite', animationTimingFunction: 'linear' }}></div>
       {/* 中心点 */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
@@ -90,13 +90,23 @@ const LoadingSpinner = () => (
     </div>
     {/* 进度条 */}
     <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
-      <div className="h-full bg-gradient-to-r from-neon-green to-neon-blue rounded-full animate-pulse" style={{ width: '60%', animation: 'loading 1.5s ease-in-out infinite' }}></div>
+      <div 
+        className="h-full bg-gradient-to-r from-neon-green to-neon-blue rounded-full"
+        style={{ 
+          animation: 'loadingBar 1.5s ease-in-out infinite',
+          width: '60%'
+        }}
+      ></div>
     </div>
-    <style jsx>{`
-      @keyframes loading {
-        0% { width: 0%; }
+    {/* 内联样式 */}
+    <style>{`
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes loadingBar {
+        0%, 100% { width: 20%; }
         50% { width: 80%; }
-        100% { width: 60%; }
       }
     `}</style>
   </div>
