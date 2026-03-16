@@ -225,8 +225,8 @@ export default function Gallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 left-0 right-0 p-3">
-                <h3 className="text-white dark:text-white font-medium text-sm truncate">{photo.title}</h3>
-                <p className="text-white/70 dark:text-white/60 text-xs mt-1 flex items-center gap-1">
+                <h3 className="text-white font-medium text-sm truncate">{photo.title}</h3>
+                <p className="text-white/70 text-xs mt-1 flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
                   {photo.date}
                 </p>
