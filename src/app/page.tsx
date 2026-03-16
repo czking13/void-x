@@ -2,35 +2,31 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { BookOpen, Sparkles, User, Mail, Image, FolderKanban } from 'lucide-react'
+import { BookOpen, User, Mail, Sparkles, Image, FolderKanban } from 'lucide-react'
 import Gallery from '@/components/Gallery'
-import LatestPosts from '@/components/LatestPosts'
 import ThemeToggle from '@/components/ThemeToggle'
 
 const projects = [
   {
-    id: 'sanguo-monopoly',
-    title: '三国大富翁',
-    description: '中国风大富翁游戏，18位三国武将。',
+    id: 'game-project',
+    title: '神秘游戏项目',
+    description: '一个正在开发中的游戏，敬请期待。',
     status: '开发中',
     icon: '🎮',
-    link: 'https://sanguo-monopoly.vercel.app',
   },
   {
-    id: 'void-x',
-    title: 'VOID.X',
-    description: '我的个人博客，记录技术和生活。',
+    id: 'personal-blog',
+    title: '个人博客',
+    description: '记录技术和生活的数字花园。',
     status: '运行中',
     icon: '🌐',
-    link: 'https://void-x-seven.vercel.app',
   },
   {
-    id: 'zepp-reminder',
-    title: 'ZeppOS 久坐提醒',
-    description: '智能手表久坐提醒应用。',
+    id: 'watch-app',
+    title: '智能手表应用',
+    description: '健康提醒类小程序。',
     status: '开发中',
     icon: '⌚',
-    link: null,
   },
 ]
 
@@ -190,16 +186,6 @@ export default function HomePage() {
                       </span>
                     </div>
                     <p className="text-sm text-white/60">{project.description}</p>
-                    {project.link && (
-                      <a 
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-neon-green hover:underline mt-2 inline-block"
-                      >
-                        访问 →
-                      </a>
-                    )}
                   </div>
                 </div>
               </motion.div>
