@@ -6,7 +6,7 @@ import { ArrowLeft, MessageCircle, Send, Clock, User, Eye, TrendingUp } from 'lu
 import { useState, useEffect } from 'react'
 import { supabase, getMessages, addMessage, incrementPageViews, type Message as MessageType } from '@/lib/supabase'
 
-export default function ContactPage() {
+export default function GuestbookPage() {
   const [messages, setMessages] = useState<MessageType[]>([])
   const [totalViews, setTotalViews] = useState(0)
   const [todayViews, setTodayViews] = useState(0)
@@ -25,7 +25,7 @@ export default function ContactPage() {
         setMessages(messagesData)
         
         // 增加并获取访问统计
-        const views = await incrementPageViews('contact')
+        const views = await incrementPageViews('guestbook')
         setTotalViews(views)
         
         // 今日访问使用本地存储（简单实现）

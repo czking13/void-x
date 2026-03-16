@@ -113,7 +113,7 @@ export default function HomePage() {
               </motion.div>
             </Link>
 
-            <Link href="/contact">
+            <Link href="/guestbook">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -122,7 +122,7 @@ export default function HomePage() {
                 <div className="flex justify-center mb-3 text-neon-green">
                   <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">联系</h3>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">留言板</h3>
                 <p className="text-sm text-[var(--text-muted)]">找到我</p>
               </motion.div>
             </Link>

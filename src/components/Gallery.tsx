@@ -239,7 +239,7 @@ export default function Gallery() {
       {/* Modal */}
       {isModalOpen && selectedPhoto && (
         <div 
-          className="fixed inset-0 bg-black/90 dark:bg-black/90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-white/80 dark:bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={closeModal}
         >
           <div 
