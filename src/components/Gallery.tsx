@@ -271,9 +271,9 @@ export default function Gallery() {
             </div>
 
             {/* Info */}
-            <div className="md:w-72 flex-shrink-0 p-4 bg-black/60 dark:bg-black/60 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-white">{selectedPhoto.title}</h2>
-              <div className="space-y-3 text-sm text-white/70">
+            <div className="md:w-72 flex-shrink-0 p-4 bg-white/95 dark:bg-black/80 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{selectedPhoto.title}</h2>
+              <div className="space-y-3 text-sm text-gray-600 dark:text-white/70">
                 <p className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
                   {selectedPhoto.location}
@@ -283,10 +283,10 @@ export default function Gallery() {
                   {selectedPhoto.date}
                 </p>
               </div>
-              <p className="mt-4 text-white/80 leading-relaxed">
+              <p className="mt-4 text-gray-700 dark:text-white/80 leading-relaxed">
                 {selectedPhoto.description}
               </p>
-              <div className="mt-6 text-xs text-white/40">
+              <div className="mt-6 text-xs text-gray-400 dark:text-white/40">
                 {currentIndex + 1} / {allPhotos.length}
               </div>
             </div>
