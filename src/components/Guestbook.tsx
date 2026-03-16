@@ -25,7 +25,7 @@ const SUPABASE_URL = 'https://zzekzgmaxqvyrombsbrj.supabase.co/rest/v1/guestbook
 const SUPABASE_KEY = 'sb_publishable_-NcqqTLpBrS8UtsmNmffGQ_HnzPoWfi'
 
 // 要删除的留言内容关键字
-const DELETE_KEYWORDS = ['@344 今天是周六']
+const DELETE_KEYWORDS = ['@344 今天是周六', '今天是周六，故国可能在休息']
 
 // 从 Supabase 获取留言
 const fetchMessages = async (): Promise<Message[]> => {
