@@ -240,17 +240,17 @@ export default function Gallery() {
             {/* Previous button */}
             <button
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 transition-colors"
             >
-              <ChevronLeft className="w-8 h-8 text-white" />
+              <ChevronLeft className="w-8 h-8 text-gray-800 dark:text-white" />
             </button>
 
             {/* Next button */}
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 dark:bg-black/50 hover:bg-black/70 dark:hover:bg-black/70 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 transition-colors"
             >
-              <ChevronRight className="w-8 h-8 text-white" />
+              <ChevronRight className="w-8 h-8 text-gray-800 dark:text-white" />
             </button>
 
             {/* Image */}
