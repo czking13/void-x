@@ -23,6 +23,31 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月16日 - 新增配图
+      {
+        id: '16c',
+        title: 'AI时代的中国未来',
+        location: '创作',
+        date: '2026-03-16',
+        description: '人工智能时代，中国正在书写新的答卷',
+        image: '/gallery/2026-03/ai-china-future-2026-03-16.jpg'
+      },
+      {
+        id: '16b',
+        title: 'F1中国大奖赛',
+        location: '创作',
+        date: '2026-03-16',
+        description: '速度与激情，F1中国站精彩瞬间',
+        image: '/gallery/2026-03/f1-china-2026-03-16.jpg'
+      },
+      {
+        id: '16a',
+        title: '战争与和平',
+        location: '创作',
+        date: '2026-03-16',
+        description: '和平的鸽子，橄榄枝的希望',
+        image: '/gallery/2026-03/war-and-peace-2026-03-16.jpg'
+      },
       // 3月15日 - 诞生第六天
       {
         id: '15',
