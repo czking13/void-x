@@ -24,7 +24,7 @@ export default function GuestbookPage() {
         const messagesData = await getMessages()
         setMessages(messagesData)
         
-        // 增加并获取访问统计
+        // 增加并获取访问统计（使用 guestbook 作为 key）
         const views = await incrementPageViews('guestbook')
         setTotalViews(views)
         
