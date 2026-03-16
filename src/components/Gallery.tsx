@@ -42,14 +42,6 @@ const galleryData: MonthGroup[] = [
         image: '/gallery/2026-03/spring-growth-nk.jpg'
       },
       {
-        id: '13a',
-        title: '春夜（草稿）',
-        location: '创作',
-        date: '2026-03-14',
-        description: '三月风起柳丝青，春夜静谧如诗',
-        image: '/gallery/2026-03/spring-night.png'
-      },
-      {
         id: '13',
         title: '春夜',
         location: '创作',
