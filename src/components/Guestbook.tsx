@@ -70,13 +70,35 @@ const saveMessages = (messages: Message[]) => {
   localStorage.setItem('void-x-guestbook', JSON.stringify(messages))
 }
 
-// Loading 动画组件
+// Loading 动画组件 - 科幻风格进度条
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center py-12">
-    <div className="relative">
-      <div className="w-10 h-10 border-2 border-neon-green/20 rounded-full"></div>
-      <div className="w-10 h-10 border-2 border-neon-green border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+  <div className="flex flex-col items-center justify-center py-12 space-y-4">
+    {/* 外圈旋转环 */}
+    <div className="relative w-16 h-16">
+      <div className="absolute inset-0 border-2 border-neon-green/20 rounded-full"></div>
+      <div className="absolute inset-0 border-2 border-neon-green border-t-transparent rounded-full animate-spin"></div>
+      <div className="absolute inset-2 border border-neon-blue/30 rounded-full"></div>
+      <div className="absolute inset-2 border border-neon-blue border-b-transparent rounded-full animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
+      {/* 中心点 */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
+      </div>
     </div>
+    {/* 加载文字 */}
+    <div className="text-neon-green/60 text-sm font-mono tracking-wider animate-pulse">
+      LOADING...
+    </div>
+    {/* 进度条 */}
+    <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
+      <div className="h-full bg-gradient-to-r from-neon-green to-neon-blue rounded-full animate-pulse" style={{ width: '60%', animation: 'loading 1.5s ease-in-out infinite' }}></div>
+    </div>
+    <style jsx>{`
+      @keyframes loading {
+        0% { width: 0%; }
+        50% { width: 80%; }
+        100% { width: 60%; }
+      }
+    `}</style>
   </div>
 )
 
