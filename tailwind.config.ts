@@ -29,6 +29,8 @@ const config: Config = {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'float': 'float 6s ease-in-out infinite',
         'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+        'loading-bar': 'loadingBar 1.5s ease-in-out infinite',
+        'spin-reverse': 'spin 1.5s linear infinite reverse',
       },
       keyframes: {
         glow: {
@@ -46,6 +48,14 @@ const config: Config = {
         'blink-caret': {
           'from, to': { borderColor: 'transparent' },
           '50%': { borderColor: '#00ff88' },
+        },
+        loadingBar: {
+          '0%, 100%': { width: '20%' },
+          '50%': { width: '80%' },
+        },
+        spin: {
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(360deg)' },
         },
       },
     },
