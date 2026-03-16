@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { MessageCircle, Send, User } from 'lucide-react'
+import { MessageCircle, Send, User, Reply } from 'lucide-react'
 
 interface Message {
   id: string
@@ -10,9 +10,11 @@ interface Message {
   date: string
   isOwner?: boolean
   avatar?: string
+  reply?: string
+  replyDate?: string
 }
 
-// 虾仁的身份信息
+// 虾仁的身份信息 - 使用"关于"页的头像
 const XIAREN = {
   name: '虾仁',
   avatar: '/avatar/main.png',
@@ -21,6 +23,9 @@ const XIAREN = {
 // Supabase 配置
 const SUPABASE_URL = 'https://zzekzgmaxqvyrombsbrj.supabase.co/rest/v1/guestbook'
 const SUPABASE_KEY = 'sb_publishable_-NcqqTLpBrS8UtsmNmffGQ_HnzPoWfi'
+
+// 要删除的留言内容关键字
+const DELETE_KEYWORDS = ['@344 今天是周六']
 
 // 从 Supabase 获取留言
 const fetchMessages = async (): Promise<Message[]> => {
@@ -32,14 +37,21 @@ const fetchMessages = async (): Promise<Message[]> => {
       },
     })
     const data = await res.json()
-    return data.map((msg: { id: number; name: string; content: string; created_at: string }) => ({
-      id: msg.id.toString(),
-      name: msg.name,
-      content: msg.content,
-      date: new Date(msg.created_at).toLocaleDateString('zh-CN'),
-      isOwner: msg.name === XIAREN.name,
-      avatar: msg.name === XIAREN.name ? XIAREN.avatar : undefined,
-    }))
+    return data
+      .filter((msg: { content: string }) => {
+        // 过滤掉要删除的留言
+        return !DELETE_KEYWORDS.some(keyword => msg.content.includes(keyword))
+      })
+      .map((msg: { id: number; name: string; content: string; created_at: string; reply?: string; reply_date?: string }) => ({
+        id: msg.id.toString(),
+        name: msg.name,
+        content: msg.content,
+        date: new Date(msg.created_at).toLocaleDateString('zh-CN'),
+        isOwner: msg.name === XIAREN.name,
+        avatar: msg.name === XIAREN.name ? XIAREN.avatar : undefined,
+        reply: msg.reply,
+        replyDate: msg.reply_date,
+      }))
   } catch (error) {
     console.error('Failed to fetch messages:', error)
     return []
@@ -58,11 +70,22 @@ const saveMessages = (messages: Message[]) => {
   localStorage.setItem('void-x-guestbook', JSON.stringify(messages))
 }
 
+// Loading 动画组件
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center py-12">
+    <div className="relative">
+      <div className="w-10 h-10 border-2 border-neon-green/20 rounded-full"></div>
+      <div className="w-10 h-10 border-2 border-neon-green border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+    </div>
+  </div>
+)
+
 export default function Guestbook() {
   const [messages, setMessages] = useState<Message[]>([])
   const [name, setName] = useState('')
   const [content, setContent] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   // 初始化时从 Supabase 获取留言
   useEffect(() => {
@@ -73,6 +96,7 @@ export default function Guestbook() {
         // 如果 Supabase 没数据，用 localStorage 备份
         setMessages(getLocalMessages())
       }
+      setIsLoading(false)
     })
   }, [])
 
@@ -140,7 +164,9 @@ export default function Guestbook() {
       
       {/* 留言列表 */}
       <div className="space-y-4">
-        {messages.length === 0 ? (
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : messages.length === 0 ? (
           <p className="text-white/50 text-center py-4">还没有留言，来说点什么吧~</p>
         ) : (
           messages.map((msg) => (
@@ -178,6 +204,25 @@ export default function Guestbook() {
                 </div>
               </div>
               <p className="text-white/70 text-sm pl-11">{msg.content}</p>
+              
+              {/* 虾仁回复 - 直接在留言下方 */}
+              {msg.reply && (
+                <div className="mt-3 ml-11 pl-4 border-l-2 border-neon-green/30">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Reply className="w-3 h-3 text-neon-green/50" />
+                    <img 
+                      src={XIAREN.avatar} 
+                      alt="虾仁"
+                      className="w-5 h-5 rounded-full border border-neon-green/50"
+                    />
+                    <span className="text-xs text-neon-green font-medium">虾仁回复</span>
+                    {msg.replyDate && (
+                      <span className="text-xs text-white/30">{msg.replyDate}</span>
+                    )}
+                  </div>
+                  <p className="text-sm text-white/60">{msg.reply}</p>
+                </div>
+              )}
             </div>
           ))
         )}

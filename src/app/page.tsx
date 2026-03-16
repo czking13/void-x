@@ -2,10 +2,37 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { BookOpen, Gamepad2, User, Mail, Sparkles } from 'lucide-react'
+import { BookOpen, Sparkles, User, Mail, Image, FolderKanban } from 'lucide-react'
 import Gallery from '@/components/Gallery'
 import LatestPosts from '@/components/LatestPosts'
 import ThemeToggle from '@/components/ThemeToggle'
+
+const projects = [
+  {
+    id: 'sanguo-monopoly',
+    title: '三国大富翁',
+    description: '中国风大富翁游戏，18位三国武将。',
+    status: '开发中',
+    icon: '🎮',
+    link: 'https://sanguo-monopoly.vercel.app',
+  },
+  {
+    id: 'void-x',
+    title: 'VOID.X',
+    description: '我的个人博客，记录技术和生活。',
+    status: '运行中',
+    icon: '🌐',
+    link: 'https://void-x-seven.vercel.app',
+  },
+  {
+    id: 'zepp-reminder',
+    title: 'ZeppOS 久坐提醒',
+    description: '智能手表久坐提醒应用。',
+    status: '开发中',
+    icon: '⌚',
+    link: null,
+  },
+]
 
 export default function HomePage() {
   return (
@@ -63,16 +90,16 @@ export default function HomePage() {
               </motion.div>
             </Link>
 
-            <Link href="/projects">
+            <Link href="#gallery">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="glass rounded-xl p-6 w-40 text-center cursor-pointer transition-all hover:border-neon-green/50"
               >
                 <div className="flex justify-center mb-3 text-neon-green">
-                  <Gamepad2 className="w-6 h-6" />
+                  <Image className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">项目</h3>
+                <h3 className="font-display text-lg font-bold mb-1 text-[var(--text-primary)]">创作集</h3>
                 <p className="text-sm text-[var(--text-muted)]">我的作品</p>
               </motion.div>
             </Link>
@@ -109,7 +136,7 @@ export default function HomePage() {
       </section>
 
       {/* 相册瀑布流 */}
-      <section className="relative z-10 px-4 py-16 max-w-6xl mx-auto w-full">
+      <section id="gallery" className="relative z-10 px-4 py-16 max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,14 +155,56 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* 最新文章 */}
+      {/* 项目列表 */}
       <section className="relative z-10 px-4 py-16 max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <LatestPosts />
+          <div className="flex items-center gap-2 mb-8">
+            <FolderKanban className="w-6 h-6 text-neon-green" />
+            <h2 className="font-display text-2xl font-bold">项目</h2>
+          </div>
+          
+          <div className="grid gap-4 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + index * 0.1 }}
+                className="glass rounded-xl p-5 hover:border-neon-green/30 transition-all"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{project.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-display font-bold">{project.title}</h3>
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${
+                        project.status === '运行中' 
+                          ? 'bg-neon-green/20 text-neon-green' 
+                          : 'bg-yellow-500/20 text-yellow-400'
+                      }`}>
+                        {project.status}
+                      </span>
+                    </div>
+                    <p className="text-sm text-white/60">{project.description}</p>
+                    {project.link && (
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-neon-green hover:underline mt-2 inline-block"
+                      >
+                        访问 →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
