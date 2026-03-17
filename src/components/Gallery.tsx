@@ -23,6 +23,15 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月17日 - 莫言风格配图
+      {
+        id: '17a',
+        title: '细雨里的代码人',
+        location: '创作',
+        date: '2026-03-17',
+        description: '三月的细雨，泥土的芬芳，看不见的根扎得很深',
+        image: '/gallery/2026-03/2026-03-17-rainy-countryside.jpg'
+      },
       // 3月16日 - 新增配图
       {
         id: '16c',
