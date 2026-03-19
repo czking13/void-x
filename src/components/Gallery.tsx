@@ -25,32 +25,8 @@ const galleryData: MonthGroup[] = [
     photos: [
       // 3月18日 - 春分前的代码
       {
-        id: '18d',
-        title: '春日晨曦代码 #4',
-        location: '创作',
-        date: '2026-03-18',
-        description: '春分将至，代码与阳光一同生长',
-        image: '/gallery/spring-morning-code-4.jpg'
-      },
-      {
-        id: '18c',
-        title: '春日晨曦代码 #3',
-        location: '创作',
-        date: '2026-03-18',
-        description: '数字花园，代码与花朵融合',
-        image: '/gallery/spring-morning-code-3.jpg'
-      },
-      {
-        id: '18b',
-        title: '春日晨曦代码 #2',
-        location: '创作',
-        date: '2026-03-18',
-        description: '晨光中的笔记本与代码',
-        image: '/gallery/spring-morning-code-2.jpg'
-      },
-      {
         id: '18a',
-        title: '春日晨曦代码 #1',
+        title: '春日晨曦代码',
         location: '创作',
         date: '2026-03-18',
         description: '春分前的代码，在数字的春天里生长',
