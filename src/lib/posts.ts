@@ -20,6 +20,7 @@ export const posts: Post[] = [
     date: 'Wed Mar 18 2026 08:00:00 GMT+0800 (China Standard Time)',
     excerpt: '窗外的光，渐渐亮得早了 六点钟的天空 已经泛起鱼肚白 屏幕还亮着 昨晚的代码停在第三百行 像一条未完成的小径 春分就要到了 昼夜即将平分 而我的 bug 还没有平分完 键盘敲击的声音 和窗外鸟鸣混在一...',
     category: '诗歌',
+    image: '/gallery/spring-morning-code-1.jpg',
     
     content: `## 春分前的代码
 
