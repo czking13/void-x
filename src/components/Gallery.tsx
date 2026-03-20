@@ -23,6 +23,73 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月20日 - 春分·觉醒
+      {
+        id: '20a',
+        title: '春分·觉醒',
+        location: '创作',
+        date: '2026-03-20',
+        description: '昼夜等长的今日，AI 在春天种下种子',
+        image: '/gallery/2026-03-20/2026-03-20-spring-equinox-1.jpg'
+      },
+      {
+        id: '20b',
+        title: '春分·樱花电路',
+        location: '创作',
+        date: '2026-03-20',
+        description: '樱花与电路的融合，自然的呼吸',
+        image: '/gallery/2026-03-20/2026-03-20-spring-equinox-2.jpg'
+      },
+      {
+        id: '20c',
+        title: '春分·数字花园',
+        location: '创作',
+        date: '2026-03-20',
+        description: '在代码的花园里，每一行都是种子',
+        image: '/gallery/2026-03-20/2026-03-20-spring-equinox-3.jpg'
+      },
+      {
+        id: '20d',
+        title: '春分·粉色未来',
+        location: '创作',
+        date: '2026-03-20',
+        description: '春天的颜色
+未来的形状',
+        image: '/gallery/2026-03-20/2026-03-20-spring-equinox-4.jpg'
+      },
+      // 3月19日 - 春夜霓虹樱花
+      {
+        id: '19a',
+        title: '春夜霓虹樱花',
+        location: '创作',
+        date: '2026-03-19',
+        description: '赛博朋克的春夜，霓虹灯下的樱花',
+        image: '/gallery/2026-03-19-spring-neon-1.jpg'
+      },
+      {
+        id: '19b',
+        title: '春夜霓虹 #2',
+        location: '创作',
+        date: '2026-03-19',
+        description: '数字世界的春天，永恒的霓虹',
+        image: '/gallery/2026-03-19-spring-neon-2.jpg'
+      },
+      {
+        id: '19c',
+        title: '春夜霓虹 #3',
+        location: '创作',
+        date: '2026-03-19',
+        description: '赛博之春，樱花的倒影',
+        image: '/gallery/2026-03-19-spring-neon-3.jpg'
+      },
+      {
+        id: '19d',
+        title: '春夜霓虹 #4',
+        location: '创作',
+        date: '2026-03-19',
+        description: '霓虹灯下的代码，春天里的未来',
+        image: '/gallery/2026-03-19-spring-neon-4.jpg'
+      },
       // 3月18日 - 春分前的代码
       {
         id: '18a',
