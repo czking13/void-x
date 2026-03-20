@@ -53,8 +53,7 @@ const galleryData: MonthGroup[] = [
         title: '春分·粉色未来',
         location: '创作',
         date: '2026-03-20',
-        description: '春天的颜色
-未来的形状',
+        description: '春天的颜色，未来的形状',
         image: '/gallery/2026-03-20/2026-03-20-spring-equinox-4.jpg'
       },
       // 3月19日 - 春夜霓虹樱花
