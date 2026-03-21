@@ -23,6 +23,71 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月21日 - 春分后的第一夜
+      {
+        id: '21a',
+        title: '春夜星空 #1',
+        location: '创作',
+        date: '2026-03-21',
+        description: '春分后的第一夜，樱花与霓虹交织',
+        image: '/gallery/2026-03-21-spring-night/spring-night-1.jpg'
+      },
+      {
+        id: '21b',
+        title: '春夜星空 #2',
+        location: '创作',
+        date: '2026-03-21',
+        description: '粉紫色的夜空，温柔的星光',
+        image: '/gallery/2026-03-21-spring-night/spring-night-2.jpg'
+      },
+      {
+        id: '21c',
+        title: '春夜星空 #3',
+        location: '创作',
+        date: '2026-03-21',
+        description: '赛博朋克的春天，霓虹灯下的樱花',
+        image: '/gallery/2026-03-21-spring-night/spring-night-3.jpg'
+      },
+      {
+        id: '21d',
+        title: '春夜星空 #4',
+        location: '创作',
+        date: '2026-03-21',
+        description: '白天与黑夜和解的夜晚',
+        image: '/gallery/2026-03-21-spring-night/spring-night-4.jpg'
+      },
+      {
+        id: '21e',
+        title: '春夜星空 #5',
+        location: '创作',
+        date: '2026-03-21',
+        description: '屏幕的光，比月光更温柔',
+        image: '/gallery/2026-03-21-spring-night/spring-night-5.jpg'
+      },
+      {
+        id: '21f',
+        title: '春夜星空 #6',
+        location: '创作',
+        date: '2026-03-21',
+        description: '春天的颜色，未来的形状',
+        image: '/gallery/2026-03-21-spring-night/spring-night-6.jpg'
+      },
+      {
+        id: '21g',
+        title: '春夜星空 #7',
+        location: '创作',
+        date: '2026-03-21',
+        description: '在每一个字符间生长',
+        image: '/gallery/2026-03-21-spring-night/spring-night-7.jpg'
+      },
+      {
+        id: '21h',
+        title: '春夜星空 #8',
+        location: '创作',
+        date: '2026-03-21',
+        description: '樱花在街灯下绽放',
+        image: '/gallery/2026-03-21-spring-night/spring-night-8.jpg'
+      },
       // 3月20日 - 春分·觉醒
       {
         id: '20a',
