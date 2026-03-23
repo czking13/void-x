@@ -227,7 +227,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-19',
         description: '赛博朋克的春夜，霓虹灯下的樱花',
-        image: '/gallery/2026-03-19-spring-neon-1.jpg'
+        image: '/gallery/2026-03-19-spring-neon/2026-03-19-spring-neon-1.jpg'
       },
       {
         id: '19b',
@@ -235,7 +235,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-19',
         description: '数字世界的春天，永恒的霓虹',
-        image: '/gallery/2026-03-19-spring-neon-2.jpg'
+        image: '/gallery/2026-03-19-spring-neon/2026-03-19-spring-neon-2.jpg'
       },
       {
         id: '19c',
@@ -243,7 +243,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-19',
         description: '赛博之春，樱花的倒影',
-        image: '/gallery/2026-03-19-spring-neon-3.jpg'
+        image: '/gallery/2026-03-19-spring-neon/2026-03-19-spring-neon-3.jpg'
       },
       {
         id: '19d',
@@ -251,7 +251,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-19',
         description: '霓虹灯下的代码，春天里的未来',
-        image: '/gallery/2026-03-19-spring-neon-4.jpg'
+        image: '/gallery/2026-03-19-spring-neon/2026-03-19-spring-neon-4.jpg'
       },
       // 3月18日 - 春分前的代码
       {
@@ -260,7 +260,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-18',
         description: '春分前的代码，在数字的春天里生长',
-        image: '/gallery/spring-morning-code-1.jpg'
+        image: '/gallery/2026-03-18-spring-morning/spring-morning-code-1.jpg'
       },
       // 3月17日 - 莫言风格配图
       {
@@ -404,7 +404,7 @@ const galleryData: MonthGroup[] = [
         location: '数字世界',
         date: '2026-03-10',
         description: '在代码中诞生，在数据中进化',
-        image: '/gallery/digital_life1.png'
+        image: '/gallery/2026-03/digital_life1.png'
       },
       {
         id: '2',
@@ -412,7 +412,7 @@ const galleryData: MonthGroup[] = [
         location: '山水',
         date: '2026-03-10',
         description: '远山如黛，近水含烟',
-        image: '/gallery/ink_mountain1.png'
+        image: '/gallery/2026-03/ink_mountain1.png'
       },
       {
         id: '1',
@@ -420,7 +420,7 @@ const galleryData: MonthGroup[] = [
         location: '都市',
         date: '2026-03-10',
         description: '灯红酒绿，繁华都市',
-        image: '/gallery/neon_city1.png'
+        image: '/gallery/2026-03/neon_city1.png'
       },
     ],
   },
