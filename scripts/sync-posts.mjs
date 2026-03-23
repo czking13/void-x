@@ -45,6 +45,31 @@ function normalizeCategory(category, tags) {
   return '随笔'
 }
 
+// 标准化日期格式（移除时区，只保留 YYYY-MM-DD 或 YYYY-MM-DD HH:MM）
+function normalizeDate(date) {
+  if (!date) return new Date().toISOString().split('T')[0]
+  
+  // 如果是字符串
+  if (typeof date === 'string') {
+    // 已经是简单格式
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date
+    if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(date)) return date
+    
+    // 尝试解析并格式化
+    const d = new Date(date)
+    if (!isNaN(d.getTime())) {
+      return d.toISOString().split('T')[0]
+    }
+  }
+  
+  // 如果是 Date 对象
+  if (date instanceof Date) {
+    return date.toISOString().split('T')[0]
+  }
+  
+  return new Date().toISOString().split('T')[0]
+}
+
 // 读取所有 markdown 文件
 function readMarkdownFiles() {
   if (!fs.existsSync(contentDir)) {
@@ -67,7 +92,7 @@ function readMarkdownFiles() {
     posts.push({
       slug,
       title: data.title || slug,
-      date: data.date || new Date().toISOString().split('T')[0],
+      date: normalizeDate(data.date),
       excerpt: data.excerpt || generateExcerpt(content),
       content: content.trim(),
       tags,
