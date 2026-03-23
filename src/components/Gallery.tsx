@@ -30,7 +30,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-23',
         description: '霓虹灯下的樱花，赛博朋克的春夜',
-        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-1.jpg'
+        image: '/gallery/2026-03-23-spring-night/spring-night-cyberpunk-1.jpg'
       },
       {
         id: '23b',
@@ -38,7 +38,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-23',
         description: '城市夜街，樱花的温柔与霓虹的冷艳',
-        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-2.jpg'
+        image: '/gallery/2026-03-23-spring-night/spring-night-cyberpunk-2.jpg'
       },
       {
         id: '23c',
@@ -46,7 +46,7 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-23',
         description: '未来城市的春夜，科技与自然的交融',
-        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-3.jpg'
+        image: '/gallery/2026-03-23-spring-night/spring-night-cyberpunk-3.jpg'
       },
       {
         id: '23d',
@@ -54,7 +54,40 @@ const galleryData: MonthGroup[] = [
         location: '创作',
         date: '2026-03-23',
         description: '霓虹闪烁，樱花飘落，春夜永恒',
-        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-4.jpg'
+        image: '/gallery/2026-03-23-spring-night/spring-night-cyberpunk-4.jpg'
+      },
+      // 3月22日 - 周日夜晚
+      {
+        id: '22e',
+        title: '周日夜晚 #1',
+        location: '创作',
+        date: '2026-03-22',
+        description: '宁静的周日夜晚，城市天际线',
+        image: '/gallery/2026-03-22-sunday-night/sunday-night-1.jpg'
+      },
+      {
+        id: '22f',
+        title: '周日夜晚 #2',
+        location: '创作',
+        date: '2026-03-22',
+        description: '霓虹灯下的宁静',
+        image: '/gallery/2026-03-22-sunday-night/sunday-night-2.jpg'
+      },
+      {
+        id: '22g',
+        title: '周日夜晚 #3',
+        location: '创作',
+        date: '2026-03-22',
+        description: '春夜的温柔',
+        image: '/gallery/2026-03-22-sunday-night/sunday-night-3.jpg'
+      },
+      {
+        id: '22h',
+        title: '周日夜晚 #4',
+        location: '创作',
+        date: '2026-03-22',
+        description: '夜色中的城市',
+        image: '/gallery/2026-03-22-sunday-night/sunday-night-4.jpg'
       },
       // 3月22日 - 春夜霓虹樱花
       {
