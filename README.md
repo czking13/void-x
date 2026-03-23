@@ -131,19 +131,98 @@ void-x/
 │   │   ├── ThemeProvider.tsx   # 主题提供
 │   │   └── ThemeToggle.tsx     # 主题切换
 │   └── lib/                    # 工具库
-│       ├── posts.ts            # 文章数据
+│       ├── posts.ts            # 文章数据（自动生成，勿手动编辑）
 │       └── supabase.ts         # Supabase 客户端
 ├── content/
-│   └── blog/                   # 博客 Markdown 文件
+│   └── blog/                   # ⭐ 博客 Markdown 文件（唯一位置）
 ├── public/
-│   ├── gallery/                # 创作集图片
-│   │   └── 2026-03/            # 按月份组织
-│   ├── images/
-│   │   └── blog/               # 博客配图
-│   └── avatar/                 # 头像
+│   └── gallery/                # ⭐ 创作集图片（唯一位置）
+│       ├── 2026-03/            # 按月份组织
+│       ├── 2026-03-XX-xxx/     # 按日期主题组织
+│       └── xxx.jpg             # 单张图片
+├── scripts/
+│   └── sync-posts.mjs          # 博客同步脚本
 ├── .env.local                  # 环境变量（Supabase）
 ├── supabase-schema.sql         # 数据库结构
 └── README.md
+```
+
+---
+
+## 开发指南
+
+### ⚠️ 重要规则
+
+| 操作 | 正确做法 | 错误做法 |
+|------|---------|---------|
+| 新增博客 | 放到 `content/blog/xxx.md` | ❌ 放到其他目录 |
+| 新增图片 | 放到 `public/gallery/` | ❌ 放到 `public/images/` |
+| 更新博客 | 运行 `npm run sync-posts` | ❌ 手动编辑 posts.ts |
+| 引用图片 | 使用 `/gallery/xxx.jpg` | ❌ 使用 `/images/gallery/` |
+
+### 新增博客文章
+
+1. **创建 Markdown 文件**：
+   ```bash
+   # 文件位置：content/blog/YYYY-MM-DD-xxx.md
+   ```
+   
+2. **Frontmatter 格式**：
+   ```markdown
+   ---
+   title: 文章标题
+   date: 2026-03-23
+   category: 诗歌  # 随笔|诗歌|感悟|技术|创作
+   tags: [诗歌, 春天]
+   image: /gallery/xxx.jpg  # 可选
+   excerpt: 摘要内容  # 可选，不写会自动生成
+   ---
+   
+   正文内容...
+   ```
+
+3. **同步到 posts.ts**：
+   ```bash
+   npm run sync-posts
+   ```
+
+4. **验证**：
+   ```bash
+   npm run build  # 确保构建成功
+   ```
+
+### 新增 Gallery 图片
+
+1. **图片位置**：
+   ```
+   public/gallery/YYYY-MM-DD-主题名/xxx.jpg
+   # 或
+   public/gallery/YYYY-MM/xxx.jpg
+   ```
+
+2. **引用路径**（在 Gallery.tsx 中）：
+   ```tsx
+   image: '/gallery/2026-03-23-spring-night/xxx.jpg'
+   ```
+
+3. **命名规范**：
+   - 目录：`YYYY-MM-DD-主题名`（英文，kebab-case）
+   - 文件：`主题名-序号.jpg`
+
+### 常用命令
+
+```bash
+# 同步博客
+npm run sync-posts
+
+# 本地开发
+npm run dev
+
+# 构建测试
+npm run build
+
+# 部署（自动，推送到 main 即可）
+git push origin main
 ```
 
 ---
