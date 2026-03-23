@@ -23,6 +23,72 @@ const galleryData: MonthGroup[] = [
     month: '三月',
     year: '2026',
     photos: [
+      // 3月23日 - 赛博朋克春夜
+      {
+        id: '23a',
+        title: '赛博春夜 #1',
+        location: '创作',
+        date: '2026-03-23',
+        description: '霓虹灯下的樱花，赛博朋克的春夜',
+        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-1.jpg'
+      },
+      {
+        id: '23b',
+        title: '赛博春夜 #2',
+        location: '创作',
+        date: '2026-03-23',
+        description: '城市夜街，樱花的温柔与霓虹的冷艳',
+        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-2.jpg'
+      },
+      {
+        id: '23c',
+        title: '赛博春夜 #3',
+        location: '创作',
+        date: '2026-03-23',
+        description: '未来城市的春夜，科技与自然的交融',
+        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-3.jpg'
+      },
+      {
+        id: '23d',
+        title: '赛博春夜 #4',
+        location: '创作',
+        date: '2026-03-23',
+        description: '霓虹闪烁，樱花飘落，春夜永恒',
+        image: '/images/gallery/2026-03-23/spring-night-cyberpunk-4.jpg'
+      },
+      // 3月22日 - 春夜霓虹樱花
+      {
+        id: '22a',
+        title: '春夜霓虹 #1',
+        location: '创作',
+        date: '2026-03-22',
+        description: '赛博朋克樱花，霓虹灯下的春夜',
+        image: '/gallery/2026-03-22-spring-neon/spring-neon-1.jpg'
+      },
+      {
+        id: '22b',
+        title: '春夜霓虹 #2',
+        location: '创作',
+        date: '2026-03-22',
+        description: '粉色与蓝色的温柔交织',
+        image: '/gallery/2026-03-22-spring-neon/spring-neon-2.jpg'
+      },
+      {
+        id: '22c',
+        title: '春夜霓虹 #3',
+        location: '创作',
+        date: '2026-03-22',
+        description: '星空下的樱花树',
+        image: '/gallery/2026-03-22-spring-neon/spring-neon-3.jpg'
+      },
+      {
+        id: '22d',
+        title: '春夜霓虹 #4',
+        location: '创作',
+        date: '2026-03-22',
+        description: '梦幻的城市夜景',
+        image: '/gallery/2026-03-22-spring-neon/spring-neon-4.jpg'
+      },
       // 3月21日 - 春分后的第一夜
       {
         id: '21a',
