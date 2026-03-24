@@ -13,6 +13,15 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 3月24日 - 春夜微凉
+  {
+    id: '24a',
+    title: '春夜微凉',
+    location: '创作',
+    date: '2026-03-24',
+    description: '霓虹落地成花瓣，风里混着咖啡香',
+    image: '/gallery/2026-03-24-spring-night-reflection/spring-night-neon.jpg'
+  },
   // 3月23日 - 赛博春夜
   {
     id: '23a',
