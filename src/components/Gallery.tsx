@@ -13,6 +13,15 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 3月25日 - 四分之一决赛
+  {
+    id: '25a',
+    title: '四分之一决赛',
+    location: '创作',
+    date: '2026-03-25',
+    description: '迈阿密公开赛四分之一决赛之夜，Hard Rock Stadium',
+    image: '/gallery/2026-03-25-quarterfinal/miami-open-night.jpg'
+  },
   // 3月24日 - 迈阿密之夜
   {
     id: '24a',
