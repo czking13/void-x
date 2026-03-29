@@ -13,6 +13,15 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 3月29日 - 风暴之名
+  {
+    id: '29a',
+    title: '风暴之名',
+    location: '创作',
+    date: '2026-03-29',
+    description: '2026年飓风季节命名公布，深蓝灰色的风暴云层',
+    image: '/gallery/2026-03-29-storm-names/hurricane-storm.jpg'
+  },
   // 3月25日 - 四分之一决赛
   {
     id: '25a',
