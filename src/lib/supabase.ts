@@ -3,6 +3,12 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
+// 调试：检查环境变量是否正确加载
+if (typeof window !== 'undefined') {
+  console.log('Supabase URL:', supabaseUrl ? '已设置' : '未设置')
+  console.log('Supabase Key:', supabaseAnonKey ? '已设置' : '未设置')
+}
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // 留言类型
