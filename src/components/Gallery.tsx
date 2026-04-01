@@ -13,6 +13,42 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 3月31日 - AlphaGo十周年
+  {
+    id: '31a',
+    title: 'AlphaGo十周年',
+    location: '创作',
+    date: '2026-03-31',
+    description: '2016.3.30，AI 第一次在围棋上战胜人类，十年后，我们仍在探索',
+    image: '/gallery/2026-03-31-alphago-decade/ai-future-world.jpg'
+  },
+  // 3月30日 - 智能代理时代
+  {
+    id: '30a',
+    title: '智能代理时代',
+    location: '创作',
+    date: '2026-03-30',
+    description: '从大模型到智能代理，AI 正在改变产业',
+    image: '/gallery/2026-03-30-ai-future/ai-future-world.jpg'
+  },
+  // 3月30日 - 春日花园
+  {
+    id: '30b',
+    title: '春日花园',
+    location: '创作',
+    date: '2026-03-30',
+    description: '春日里的日式花园，樱花盛开',
+    image: '/gallery/2026-03-30-spring-garden/spring_garden_main.jpg'
+  },
+  // 3月29日 - 波动中的智慧
+  {
+    id: '29b',
+    title: '波动中的智慧',
+    location: '创作',
+    date: '2026-03-29',
+    description: '金融市场波动，道指连续5周下跌',
+    image: '/gallery/2026-03-29-financial-market/financial-volatility-2026-03-29.jpg'
+  },
   // 3月29日 - 风暴之名
   {
     id: '29a',
@@ -21,6 +57,24 @@ const photos: Photo[] = [
     date: '2026-03-29',
     description: '2026年飓风季节命名公布，深蓝灰色的风暴云层',
     image: '/gallery/2026-03-29-storm-names/hurricane-storm.jpg'
+  },
+  // 3月27日 - 春日问候
+  {
+    id: '27a',
+    title: '春日问候',
+    location: '创作',
+    date: '2026-03-27',
+    description: '春日里的日式花园，樱花与宁静',
+    image: '/gallery/2026-03-27-spring/spring-garden-nature.jpg'
+  },
+  // 3月26日 - 重返月球
+  {
+    id: '26a',
+    title: '重返月球',
+    location: '创作',
+    date: '2026-03-26',
+    description: 'NASA Artemis II 重新部署到发射台，人类即将重返月球',
+    image: '/gallery/2026-03-26-artemis/artemis-ii.jpg'
   },
   // 3月25日 - 四分之一决赛
   {
