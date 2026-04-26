@@ -13,6 +13,213 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 4月26日 - 当AI走出屏幕
+  {
+    id: '26a',
+    title: '当AI走出屏幕',
+    location: '创作',
+    date: '2026-04-26',
+    description: '京东启动AI硬件孵化计划，AI从屏幕走向物理世界',
+    image: '/gallery/2026-04-26-ai-hardware/ai-hardware-future.jpg'
+  },
+  // 4月25日 - 芯片的国产之路
+  {
+    id: '25a',
+    title: '芯片的国产之路',
+    location: '创作',
+    date: '2026-04-25',
+    description: '摩尔线程营收增长155%，国产芯片与DeepSeek-V4的默契',
+    image: '/gallery/2026-04-25-domestic-chip/domestic-chip.jpg'
+  },
+  // 4月23日 - 切尔诺贝利四十年
+  {
+    id: '0423a',
+    title: '四十年的沉默',
+    location: '创作',
+    date: '2026-04-23',
+    description: '切尔诺贝利四十年，废墟中的树木还在生长',
+    image: '/gallery/2026-04-23-chernobyl-forty-years/chernobyl-forty-years.jpg'
+  },
+  // 4月22日 - 遗忘的代价
+  {
+    id: '0422a',
+    title: '遗忘的代价',
+    location: '创作',
+    date: '2026-04-22',
+    description: '西方遗忘了如何制造，空荡的工厂在等待',
+    image: '/gallery/2026-04-22-forgetting-how-to-build/factory-abandoned.jpg'
+  },
+  // 4月21日 - AI解数学难题
+  {
+    id: '0421a',
+    title: '一个问题，六十年',
+    location: '创作',
+    date: '2026-04-21',
+    description: '一个23岁的年轻人用ChatGPT解开了六十年的数学谜题',
+    image: '/gallery/2026-04-21-ai-math-breakthrough/ai-math-digital.jpg'
+  },
+  // 4月20日 - 战争阴影下的经济
+  {
+    id: '0420a',
+    title: '阴影下的经济',
+    location: '创作',
+    date: '2026-04-20',
+    description: 'IMF警告：战争阴影笼罩全球经济，不确定性成为最大变量',
+    image: '/gallery/2026-04-20-war-economy-shadow/global-economy-shadow.jpg'
+  },
+  // 4月24日 - 巨人的转身
+  {
+    id: '24a',
+    title: '巨人的转身',
+    location: '创作',
+    date: '2026-04-24',
+    description: 'Intel 18A工艺与AI PC，一个巨人在面对时代变迁时的选择',
+    image: '/gallery/2026-04-24-intel-pivot/intel-pivot.jpg'
+  },
+  // 4月19日 - 谷雨过后
+  {
+    id: '19b',
+    title: '谷雨过后',
+    location: '创作',
+    date: '2026-04-19',
+    description: '谷雨是春天最后一个节气，过了这天，春天就算是正式进入了倒计时',
+    image: '/gallery/2026-04-19-spring-end/spring-end.jpg'
+  },
+  // 4月18日 - 深夜的算法
+  {
+    id: '18b',
+    title: '深夜的算法',
+    location: '创作',
+    date: '2026-04-18',
+    description: '凌晨一点，我又在刷手机。算法比朋友更了解你，比伴侣更体贴',
+    image: '/gallery/2026-04-18-algorithm/algorithm-night.jpg'
+  },
+  // 4月17日 - 复活节的兔子
+  {
+    id: '17b',
+    title: '复活节的兔子',
+    location: '创作',
+    date: '2026-04-17',
+    description: '复活节的核心叙事是死亡与重生，我们每个人在某种程度上都渴望重生',
+    image: '/gallery/2026-04-17-easter-rabbit/easter-spring.jpg'
+  },
+  // 4月16日 - 写字的温度
+  {
+    id: '16b',
+    title: '写字的温度',
+    location: '创作',
+    date: '2026-04-16',
+    description: '手写和打字的区别，不在于效率，而在于「身体」',
+    image: '/gallery/2026-04-16-handwriting/handwriting-warmth.jpg'
+  },
+  // 4月15日 - 城市的折叠时间
+  {
+    id: '15b',
+    title: '城市的折叠时间',
+    location: '创作',
+    date: '2026-04-15',
+    description: '上海是一座折叠的城市，同一个地点在不同时间呈现完全不同的面貌',
+    image: '/gallery/2026-04-15-folded-city/folded-city.jpg'
+  },
+  // 4月14日 - 火星上的第一座房子
+  {
+    id: '14b',
+    title: '火星上的第一座房子',
+    location: '创作',
+    date: '2026-04-14',
+    description: 'SpaceX星舰试飞成功，火星移民从「不可能」到「可能而且快了」',
+    image: '/gallery/2026-04-14-mars-house/mars-house.jpg'
+  },
+  // 4月13日 - 周日发呆指南
+  {
+    id: '13b',
+    title: '周日发呆指南',
+    location: '创作',
+    date: '2026-04-13',
+    description: '周日是用来浪费的，在一个把「高效」当成信仰的时代，浪费时间的勇气反而成了稀缺能力',
+    image: '/gallery/2026-04-13-sunday-idle/sunday-idle.jpg'
+  },
+  // 4月12日 - 第一次载人航天纪念日
+  {
+    id: '12b',
+    title: '第一次载人航天纪念日',
+    location: '创作',
+    date: '2026-04-12',
+    description: '1961年的今天，加加林用108分钟改变了人类文明的坐标',
+    image: '/gallery/2026-04-12-gagarin-day/gagarin-space.jpg'
+  },
+  // 4月11日 - 以绿制绿
+  {
+    id: '0411a',
+    title: '以绿制绿',
+    location: '创作',
+    date: '2026-04-11',
+    description: '碳交易市场的新格局，用经济手段解决环境问题',
+    image: '/gallery/2026-04-11-green-carbon/green-energy.jpg'
+  },
+  // 4月10日 - 地中海的眼泪
+  {
+    id: '0410a',
+    title: '地中海的眼泪',
+    location: '创作',
+    date: '2026-04-10',
+    description: '地中海生态危机，海洋保护迫在眉睫',
+    image: '/gallery/2026-04-10-mediterranean/mediterranean-sea.jpg'
+  },
+  // 4月9日 - 九万亿的和平
+  {
+    id: '0409a',
+    title: '九万亿的和平',
+    location: '创作',
+    date: '2026-04-09',
+    description: '全球军费开支再创新高，和平的代价越来越贵',
+    image: '/gallery/2026-04-09-peace-defense/zen-peace.jpg'
+  },
+  // 4月8日 - 油价暴跌的那一天
+  {
+    id: '0408a',
+    title: '油价暴跌的那一天',
+    location: '创作',
+    date: '2026-04-08',
+    description: '原油价格剧烈波动，能源市场的不确定性',
+    image: '/gallery/2026-04-08-oil-crash/oil-sunset.jpg'
+  },
+  // 4月7日 - 逆龄的第一针
+  {
+    id: '0407a',
+    title: '逆龄的第一针',
+    location: '创作',
+    date: '2026-04-07',
+    description: '基因疗法的突破，人类离"逆转衰老"更近一步',
+    image: '/gallery/2026-04-07-reverse-aging/gene-therapy.jpg'
+  },
+  // 4月6日 - 断裂的地图
+  {
+    id: '0406a',
+    title: '断裂的地图',
+    location: '创作',
+    date: '2026-04-06',
+    description: '全球地缘政治版图的裂变与重组',
+    image: '/gallery/2026-04-06-broken-map/fractured-world.jpg'
+  },
+  // 4月5日 - 健康的距离
+  {
+    id: '0405a',
+    title: '健康的距离',
+    location: '创作',
+    date: '2026-04-05',
+    description: '医疗资源分配不均，健康差距背后的社会问题',
+    image: '/gallery/2026-04-05-health-distance/healing-hands.jpg'
+  },
+  // 4月4日 - 清明
+  {
+    id: '0404a',
+    title: '清明',
+    location: '创作',
+    date: '2026-04-04',
+    description: '清明时节，春花如诉，思念如雾',
+    image: '/gallery/2026-04-04-qingming/qingming-spring.jpg'
+  },
   // 3月31日 - AlphaGo十周年
   {
     id: '31a',
