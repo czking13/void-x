@@ -13,6 +13,159 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 8月8日 - CPU的反击
+  {
+    id: '0808a',
+    title: 'CPU的反击',
+    location: '创作',
+    date: '2026-08-08',
+    description: 'DeepSeek V4 Flash刷榜ARC Prize，Red Hat推动CPU推理回归，DeepMind天气预报突破——计算的未来正在分散化',
+    image: '/gallery/2026-08-08-cpu-returns/cover.jpg'
+  },
+  // 8月7日 - 宇树上市
+  {
+    id: '0807a',
+    title: 'Unitree IPO',
+    location: '创作',
+    date: '2026-08-07',
+    description: '宇树科技科创板IPO路演，人形机器人出货量全球第一——AI正在从软件渗透到硬件，从云端走向实体',
+    image: '/gallery/2026-08-07-unitree-ipo/cover.jpg'
+  },
+  // 8月6日 - Discovery Loop
+  {
+    id: '0806a',
+    title: 'Discovery Loop',
+    location: '创作',
+    date: '2026-08-06',
+    description: 'Jeff Dean 离开 Google，四大 AI 顶尖大脑联手创办 Discovery Loop——AI 的人才引力正在从大厂流向新世界',
+    image: '/gallery/2026-08-06-discovery-loop/cover.jpg'
+  },
+  // 8月5日 - GPU是新石油
+  {
+    id: '0805a',
+    title: 'GPU是新石油',
+    location: '创作',
+    date: '2026-08-05',
+    description: '光模块禁令与算力通胀——谁掌握了算力的生产、分配和定价权，谁就掌握了下一个时代',
+    image: '/gallery/2026-08-05-gpu-is-the-new-oil/cover.jpg'
+  },
+  // 8月4日 - 从云端到手心
+  {
+    id: '0804a',
+    title: '从云端到手心',
+    location: '创作',
+    date: '2026-08-04',
+    description: 'AI从云端概念变成手里日常——立秋前夜，技术消失在生活中',
+    image: '/gallery/2026-08-04-from-cloud-to-palm/cover.jpg'
+  },
+  // 8月3日 - 肉身代理
+  {
+    id: '0803a',
+    title: '肉身代理',
+    location: '创作',
+    date: '2026-08-03',
+    description: '当人类变成 AI 的转发机器——判断力外包的代价',
+    image: '/gallery/2026-08-03-meat-proxy/cover.jpg'
+  },
+  // 8月2日 - 隐形收割
+  {
+    id: '0802a',
+    title: '隐形收割',
+    location: '创作',
+    date: '2026-08-02',
+    description: 'AI 爬虫时代的互联网悖论——被扫描、被训练、但从未被引用',
+    image: '/gallery/2026-08-02-invisible-harvest/cover.jpg'
+  },
+  // 8月1日 - 多人模式
+  {
+    id: '0801a',
+    title: '多人模式',
+    location: '创作',
+    date: '2026-08-01',
+    description: 'Agent 的单人时代结束了——从个人助手到团队协作',
+    image: '/gallery/2026-08-01-multiplayer-agents/cover.jpg'
+  },
+  // 7月31日 - 闪电
+  {
+    id: '0731a',
+    title: '闪电',
+    location: '创作',
+    date: '2026-07-31',
+    description: 'DeepSeek V4 Flash 正式发布——模型不再是产品，是基础设施',
+    image: '/gallery/2026-07-31-deepseek-v4-flash/cover.jpg'
+  },
+  // 7月30日 - 超级工厂
+  {
+    id: '0730a',
+    title: '超级工厂',
+    location: '创作',
+    date: '2026-07-30',
+    description: '欧盟114亿美元押注AI超级工厂——工业时代思维能打赢数字时代战争吗？',
+    image: '/gallery/2026-07-30-gigafactories/cover.jpg'
+  },
+  // 7月27日 - 下一站，新三样
+  {
+    id: '0727a',
+    title: '下一站，新三样',
+    location: '创作',
+    date: '2026-07-27',
+    description: 'AI、机器人、创新药——中国制造的下一波浪潮',
+    image: '/gallery/2026-07-27-next-new-three/cover.jpg'
+  },
+  // 7月25日 - 七月二十五日的清醒
+  {
+    id: '0725a',
+    title: '七月二十五日的清醒',
+    location: '创作',
+    date: '2026-07-25',
+    description: '跑得快的人，也要记得为什么出发',
+    image: '/gallery/2026-07-25-clarity/poem-cover.jpg'
+  },
+  // 7月25日 - 马斯克的刹车信号
+  {
+    id: '0725b',
+    title: '马斯克的刹车信号',
+    location: '创作',
+    date: '2026-07-25',
+    description: '能做不等于该做，强大不等于正确——AI时代的清醒之声',
+    image: '/gallery/2026-07-25-clarity/news-cover.jpg'
+  },
+  // 7月24日 - 山路
+  {
+    id: '0724a',
+    title: '山路',
+    location: '创作',
+    date: '2026-07-24',
+    description: '山路蜿蜒像一道还没解开的方程式，灵感需要走路',
+    image: '/gallery/2026-07-24-mountain-road/poem-cover.jpg'
+  },
+  // 7月24日 - 答案在山上
+  {
+    id: '0724b',
+    title: '答案在山上',
+    location: '创作',
+    date: '2026-07-24',
+    description: '菲尔兹奖与山路上的风，最好的灵感从来不在办公桌前',
+    image: '/gallery/2026-07-24-mountain-road/news-cover.jpg'
+  },
+  // 7月23日 - 七月的清晨
+  {
+    id: '0723a',
+    title: '七月的清晨',
+    location: '创作',
+    date: '2026-07-23',
+    description: '上海清晨的梧桐与豆浆烟，和平是牛奶的保质期',
+    image: '/gallery/2026-07-23-july-morning/poem-cover.jpg'
+  },
+  // 7月23日 - 战争与和平
+  {
+    id: '0723b',
+    title: '战争与和平',
+    location: '创作',
+    date: '2026-07-23',
+    description: '燃烧的油轮与宁静的城市天际线，同一个太阳下的两个世界',
+    image: '/gallery/2026-07-23-july-morning/news-cover.jpg'
+  },
   // 4月26日 - 当AI走出屏幕
   {
     id: '26a',
@@ -408,6 +561,50 @@ const photos: Photo[] = [
     date: '2026-03-12',
     description: '种一棵树，最好的时间是十年前，其次是现在',
     image: '/gallery/2026-03/planting-day.png'
+  },
+  // 7月12日 - 一张网
+  {
+    id: '0712a',
+    title: '一张网',
+    location: '创作',
+    date: '2026-07-12',
+    description: '长征十号乙网系回收，中国航天的回收新路线',
+    image: '/gallery/2026-07-12-the-net/cover.jpg'
+  },
+  // 7月18日 - 那场赛跑
+  {
+    id: '718a',
+    title: '那场赛跑',
+    location: '创作',
+    date: '2026-07-18',
+    description: '两条平行的赛道，蓝色与红色，AI竞赛的纠缠',
+    image: '/gallery/2026-07-18/the-race.jpg'
+  },
+  // 7月19日 - 记忆之墙
+  {
+    id: '719a',
+    title: '记忆之墙',
+    location: '创作',
+    date: '2026-07-19',
+    description: '当算力不再是唯一瓶颈，内存正在成为AI的天花板',
+    image: '/images/blog/the-memory-wall.jpg'
+  },
+  // 7月20日 - 二十五美金的漏洞猎人
+  {
+    id: '720a',
+    title: '二十五美金的漏洞猎人',
+    location: '创作',
+    date: '2026-07-20',
+    description: 'GPT5.6用25美元API费用找到了价值50万美元的零日漏洞',
+    image: '/images/blog/2026-07-20-the-twenty-five-dollar-hack.jpg'
+  },
+  {
+    id: '721a',
+    title: '中国模型洪流',
+    location: '创作',
+    date: '2026-07-21',
+    description: '当恐惧成为话题本身，说明洪水已经到来',
+    image: '/images/blog/2026-07-21-the-flood.jpg'
   },
   // 3月11日 - 诞生
   {
