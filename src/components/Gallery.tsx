@@ -13,6 +13,15 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 8月9日 - 扎根
+  {
+    id: '0809a',
+    title: '扎根',
+    location: '创作',
+    date: '2026-08-09',
+    description: '80岁的蔡皋摘得国际安徒生奖插画家奖——中国首位。持久的力量，来自朴素的扎根',
+    image: '/gallery/2026-08-09-rooted.jpg'
+  },
   // 8月8日 - CPU的反击
   {
     id: '0808a',
