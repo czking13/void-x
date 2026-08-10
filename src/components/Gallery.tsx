@@ -13,6 +13,15 @@ interface Photo {
 }
 
 const photos: Photo[] = [
+  // 8月10日 - 推理经济
+  {
+    id: '0810a',
+    title: '推理经济',
+    location: '创作',
+    date: '2026-08-10',
+    description: 'Meta发布Muse Glimmer小模型主打本地运行，Gartner预测AI推理基础设施支出增长96%，TSMC营收暴涨45%——AI重心从训练转向推理',
+    image: '/gallery/2026-08-10-inference-economy/cover.jpg'
+  },
   // 8月9日 - 扎根
   {
     id: '0809a',
