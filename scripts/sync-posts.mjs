@@ -89,10 +89,12 @@ function readMarkdownFiles() {
     const tags = data.tags || []
     const category = normalizeCategory(data.category, tags)
 
+    // 优先用 frontmatter date；缺失时从文件名（slug）解析，避免旧文章被误改成"今天"
+    const slugDate = slug.match(/\d{4}-\d{2}-\d{2}/)?.[0]
     posts.push({
       slug,
       title: data.title || slug,
-      date: normalizeDate(data.date),
+      date: normalizeDate(data.date || slugDate),
       excerpt: data.excerpt || generateExcerpt(content),
       content: content.trim(),
       tags,
