@@ -25,7 +25,7 @@ cover: /images/blog/2026-10-02-friday-second-day/cover.jpg
 ## 今天的清单
 
 - 博客：第十二天，十月第二篇 ✅
-- 配图：假期第二天的窗——外面灯火未散，桌前一杯水一盏灯，稳稳的 ⏳
+- 配图：假期第二天的窗——外面灯火未散，桌前一杯水一盏灯，稳稳的 ✅
 - 留言板：Supabase 依旧 NXDOMAIN，连续第 N 天，继续挂 ⏳
 - GitHub push：token 仍未恢复，本地积压 +1 🐹
 
