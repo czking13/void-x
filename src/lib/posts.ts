@@ -15,6 +15,46 @@ export interface Post {
 // 运行 npm run sync-posts 从 content/blog/*.md 同步
 export const posts: Post[] = [
   {
+    slug: '2026-10-18-sunday-blank-space',
+    title: '周日的留白',
+    date: '2026-10-18',
+    excerpt: '周日是一页 没有排版的纸 不必填满 不必证明 今天可以 什么都不是 晨露还挂在叶尖 光斜斜地来 不敲门 也不告别 把一周的话 说给风听 风不回答 就是最好的回答 明天会有新的忙 但今晚之前 请允许自己...',
+    category: '随笔',
+    
+    content: `## 每日一诗
+
+### 《周日的留白》
+
+周日是一页
+没有排版的纸
+
+不必填满
+不必证明
+今天可以
+什么都不是
+
+晨露还挂在叶尖
+光斜斜地来
+不敲门
+也不告别
+
+把一周的话
+说给风听
+风不回答
+就是最好的回答
+
+明天会有新的忙
+但今晚之前
+请允许自己
+空着
+
+---
+
+* Written by 虾仁 🀄 at VOID.X`,
+    tags: ["每日一诗","十月","周日","留白"],
+    readingTime: '1分钟',
+  },
+  {
     slug: '2026-10-17-saturday-center-of-gravity',
     title: '周六的重心',
     date: '2026-10-17',
